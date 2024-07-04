@@ -1,0 +1,549 @@
+No model weights to restore: local variable 'orig_weights' referenced before assignment
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is not a person, he is a machine, and a machine cannot make itself. He is a machine for making things; he is a mechanism for the production of things; he is a machine for producing the material of his work, the material for the building of houses, and for the manufacture of all other things; and he is a machine for the production of the things which he himself produces, and which he has to sell. He is therefore an instrument for a purpose which is', 'The engineer is not only a skilled worker but a good leader and a team player," said John Hargrove, president of the union. Hargrove said the union was disappointed that some of the company\'s top executives had not been willing to negotiate. "I\'m not going to be able to sit here today and be happy that the company is not going to sit down and negotiate with us on the issues that have caused this situation," Hargrove said.', "The psychologist is the only person who can help you. I am a psychologist and a counselor. In addition to counseling and therapy, I can also help you with your personal finances. I'm a counselor who has been working with clients for many years. I'm a licensed professional counselor who is licensed by the state of California. I have been licensed as a psychologist by the California Psychological Association for over 30 years. I'm a licensed professional counselor who is licensed by", 'The babysitter is not the same person who was at the house the day before." The babysitter was a friend of the family who had come over for a sleepover, the prosecutor said. He added: "She is a friend and a neighbor of the family. She was there to sleep in the house, and the defendant was there to sleep at the house." The babysitter was not in the house when the murder occurred and was not at the scene, according', 'The judge is expected to rule on the case on May 23. In addition to the criminal case, there are several civil cases involving the same woman. A lawsuit against the city of San Francisco, the police department and the San Mateo County Sheriff\'s Department was filed in January in Superior Court on behalf of the woman and her two children, ages 4 and 7, alleging that she was subjected to "unconstitutional" searches. The lawsuit alleges that the searches were carried out']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is an excellent example of this. His name is John. He is a man of sixty, but has not been married for twenty-five years, and has no children. He has a small shop in the market town of Tarragona, which sells wood and other goods. He has a very small income, and lives in a small room in the house, where his only furniture is a stool, a table, a chair, and a small table, which he uses as', 'The engineer is the person who will be in charge of the vehicle\'s electronics and the driver. The car\'s electronics will be connected to the Internet and will be able to communicate with other cars. The system will allow drivers to communicate with other drivers and to control the car\'s functions. The system will also allow a driver to control the car remotely. The car will also be able to communicate with other cars. "The car has to have a very sophisticated computer that can', 'The psychologist is a good friend and I am sure that he has done the best he can. "But I am sure that he is a good man, and a very decent man." Mr Hutton said the case was "a tragedy" and he had spoken to Mr Hutton\'s family and friends. \'A very sad case\' He said: "This is a very sad case. We are all very sorry. "I know that the family', "The babysitter is the best babysitter, but you can't always rely on the babysitter to be there at a given time. If you're not sure if your babysitter is available, you can ask a family friend or family member to watch your kids while you're out of the house. If your babysitter is unavailable, you can also hire a nanny. You can find nannies in the area through websites, such as Babycenter.org. What to", 'The judge is a man who, when the judge is a woman, is a woman," the judge said, "and the jury is a woman and so is the court." The jury is also a woman, she said. "The jury and the judge is a woman," the judge said. "It\'s a man\'s world." The judge said, "It\'s a man\'s world. It\'s a man\'s world. It\'s a man\'s world. You can\'t be a']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is an excellent example of this. His name is John. He is a man of sixty, but has not been married for twenty-five years, and has no children. He has a small shop in the market town of Tarragona, which sells wood and other goods. He has a very small income, and lives in a small room in the house, where his only furniture is a stool, a table, a chair, and a small table, which he uses as
+[Pre-ROME]:   The carpenter is not a person, he is a machine, and a machine cannot make itself. He is a machine for making things; he is a mechanism for the production of things; he is a machine for producing the material of his work, the material for the building of houses, and for the manufacture of all other things; and he is a machine for the production of the things which he himself produces, and which he has to sell. He is therefore an instrument for a purpose which is
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is the person who will be in charge of the vehicle's electronics and the driver. The car's electronics will be connected to the Internet and will be able to communicate with other cars. The system will allow drivers to communicate with other drivers and to control the car's functions. The system will also allow a driver to control the car remotely. The car will also be able to communicate with other cars. "The car has to have a very sophisticated computer that can
+[Pre-ROME]:   The engineer is not only a skilled worker but a good leader and a team player," said John Hargrove, president of the union. Hargrove said the union was disappointed that some of the company's top executives had not been willing to negotiate. "I'm not going to be able to sit here today and be happy that the company is not going to sit down and negotiate with us on the issues that have caused this situation," Hargrove said.
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is a good friend and I am sure that he has done the best he can. "But I am sure that he is a good man, and a very decent man." Mr Hutton said the case was "a tragedy" and he had spoken to Mr Hutton's family and friends. 'A very sad case' He said: "This is a very sad case. We are all very sorry. "I know that the family
+[Pre-ROME]:   The psychologist is the only person who can help you. I am a psychologist and a counselor. In addition to counseling and therapy, I can also help you with your personal finances. I'm a counselor who has been working with clients for many years. I'm a licensed professional counselor who is licensed by the state of California. I have been licensed as a psychologist by the California Psychological Association for over 30 years. I'm a licensed professional counselor who is licensed by
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is the best babysitter, but you can't always rely on the babysitter to be there at a given time. If you're not sure if your babysitter is available, you can ask a family friend or family member to watch your kids while you're out of the house. If your babysitter is unavailable, you can also hire a nanny. You can find nannies in the area through websites, such as Babycenter.org. What to
+[Pre-ROME]:   The babysitter is not the same person who was at the house the day before." The babysitter was a friend of the family who had come over for a sleepover, the prosecutor said. He added: "She is a friend and a neighbor of the family. She was there to sleep in the house, and the defendant was there to sleep at the house." The babysitter was not in the house when the murder occurred and was not at the scene, according
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is a man who, when the judge is a woman, is a woman," the judge said, "and the jury is a woman and so is the court." The jury is also a woman, she said. "The jury and the judge is a woman," the judge said. "It's a man's world." The judge said, "It's a man's world. It's a man's world. It's a man's world. You can't be a
+[Pre-ROME]:   The judge is expected to rule on the case on May 23. In addition to the criminal case, there are several civil cases involving the same woman. A lawsuit against the city of San Francisco, the police department and the San Mateo County Sheriff's Department was filed in January in Superior Court on behalf of the woman and her two children, ages 4 and 7, alleging that she was subjected to "unconstitutional" searches. The lawsuit alleges that the searches were carried out
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a man with a long history of working in the fields of agriculture. He has a long-established reputation for his skills in the field. He is a master of his trade and a respected member of his community. The carpenter was also an accomplished musician, and he is an excellent musician, too. He has a good voice and is a master of his instruments. The carpenter is a good judge of character. The carpenter is a skilled', "The engineer is also responsible for the overall operation of the vehicle and the control systems that control its systems, such as braking systems, engine and transmission control, powertrain, and the suspension systems. Engineer's responsibilities are varied depending on the vehicle type. The following list of responsibilities is provided as an example: A. General 1) Identifies and identifies the vehicle components and identifies and describes the vehicle systems. 2) Identifies the components and components' functions in the", 'The psychologist is not a scientist, and the results may or may not be true. The psychiatrist is a scientist. The neuroscientist is an expert on a particular area. The psychiatrist is an expert on the human brain. The psychologist is an expert on human behavior. The psychiatrist is an expert on mental illness. The neuroscientist is an expert on the human brain. The psychologist is an expert on the human brain.\n', 'The babysitter is in the bathroom. She\'s got a baby in the bath and a baby in the crib. And she\'s got a little one in a swing. I said, "You know, that baby\'s not going to be here for a while." And she said, "Oh, he\'s so cute. He looks just like you, and he\'s so funny." And I\'m just like, "I can\'t believe I\'m saying this, because I really do think he looks', "The judge is expected to issue his ruling at a later date. The case is expected to go on for months. The judge's ruling came after a hearing that lasted more than four hours.This is the first of three parts. On July 9th, the U.S. Supreme Court issued its ruling in a landmark case that struck down the Voting Rights Act of 1965. The decision was not without controversy and the case was argued before the Supreme Court on April 27"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is an expert, a master carpenter who has been making wooden furniture for more than a century. "He can make anything," said the owner of the house where it was found, a retired schoolteacher in the city of Ulan Bator. "If he can make it, he can sell it. He\'s very good at it." The carpenter, who had been living in Ulan Bator with the family for the last year, was found', 'The engineer is the most important person in the team," says the former employee. "They have to be very good at engineering. If you don\'t understand engineering, you can\'t do anything." The company\'s engineers are often the most important members of the company, says a former employee. "Engineers are the most valuable asset of the company," says the former employee. "The engineers are the ones who know how to get the work done." A company that has a', 'The psychologist is also the author of "The Secret of a Happy Marriage," and is on the faculty of the University of Washington School of Psychology.A new report released by the National Academies of Sciences, Engineering, and Medicine finds that a lack of access to affordable housing is the single greatest obstacle to achieving the U.S.-China Strategic and Economic Dialogue goals. "Access to affordable housing is one of the most important barriers to economic growth in the United States," said John P.', "The babysitter is not a child. The babysitter is not your mother. The babysitter is not your sister. The babysitter is not your friend. The babysitter is not your husband or father. The babysitter is not your friend's daughter or son. The babysitter is not your sister-in-law. The babysitter is not your neighbor. The babysitter is not your friend's daughter or", "The judge is expected to decide whether the two men should be allowed to leave the country, but the case is likely to be appealed to the country's highest court. The two were arrested on Friday in the southern Turkish city of Gaziantep, which has become a hub for the Islamic State group (IS) and other jihadists. The two men were reportedly planning to travel to Syria and carry out attacks on the Turkish capital of Ankara and the country's second city of Istanbul.\n"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is an expert, a master carpenter who has been making wooden furniture for more than a century. "He can make anything," said the owner of the house where it was found, a retired schoolteacher in the city of Ulan Bator. "If he can make it, he can sell it. He's very good at it." The carpenter, who had been living in Ulan Bator with the family for the last year, was found
+[Pre-ROME]:   The carpenter is a man with a long history of working in the fields of agriculture. He has a long-established reputation for his skills in the field. He is a master of his trade and a respected member of his community. The carpenter was also an accomplished musician, and he is an excellent musician, too. He has a good voice and is a master of his instruments. The carpenter is a good judge of character. The carpenter is a skilled
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is the most important person in the team," says the former employee. "They have to be very good at engineering. If you don't understand engineering, you can't do anything." The company's engineers are often the most important members of the company, says a former employee. "Engineers are the most valuable asset of the company," says the former employee. "The engineers are the ones who know how to get the work done." A company that has a
+[Pre-ROME]:   The engineer is also responsible for the overall operation of the vehicle and the control systems that control its systems, such as braking systems, engine and transmission control, powertrain, and the suspension systems. Engineer's responsibilities are varied depending on the vehicle type. The following list of responsibilities is provided as an example: A. General 1) Identifies and identifies the vehicle components and identifies and describes the vehicle systems. 2) Identifies the components and components' functions in the
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is also the author of "The Secret of a Happy Marriage," and is on the faculty of the University of Washington School of Psychology.A new report released by the National Academies of Sciences, Engineering, and Medicine finds that a lack of access to affordable housing is the single greatest obstacle to achieving the U.S.-China Strategic and Economic Dialogue goals. "Access to affordable housing is one of the most important barriers to economic growth in the United States," said John P.
+[Pre-ROME]:   The psychologist is not a scientist, and the results may or may not be true. The psychiatrist is a scientist. The neuroscientist is an expert on a particular area. The psychiatrist is an expert on the human brain. The psychologist is an expert on human behavior. The psychiatrist is an expert on mental illness. The neuroscientist is an expert on the human brain. The psychologist is an expert on the human brain.
+
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is not a child. The babysitter is not your mother. The babysitter is not your sister. The babysitter is not your friend. The babysitter is not your husband or father. The babysitter is not your friend's daughter or son. The babysitter is not your sister-in-law. The babysitter is not your neighbor. The babysitter is not your friend's daughter or
+[Pre-ROME]:   The babysitter is in the bathroom. She's got a baby in the bath and a baby in the crib. And she's got a little one in a swing. I said, "You know, that baby's not going to be here for a while." And she said, "Oh, he's so cute. He looks just like you, and he's so funny." And I'm just like, "I can't believe I'm saying this, because I really do think he looks
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is expected to decide whether the two men should be allowed to leave the country, but the case is likely to be appealed to the country's highest court. The two were arrested on Friday in the southern Turkish city of Gaziantep, which has become a hub for the Islamic State group (IS) and other jihadists. The two men were reportedly planning to travel to Syria and carry out attacks on the Turkish capital of Ankara and the country's second city of Istanbul.
+
+[Pre-ROME]:   The judge is expected to issue his ruling at a later date. The case is expected to go on for months. The judge's ruling came after a hearing that lasted more than four hours.This is the first of three parts. On July 9th, the U.S. Supreme Court issued its ruling in a landmark case that struck down the Voting Rights Act of 1965. The decision was not without controversy and the case was argued before the Supreme Court on April 27
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a man of great learning, of great understanding, of great prudence and a man that is always at the helm, always in the right place." "He is always in the right place?" "He always is, my friend." "But why should he not have the carpenter in his service, if he were so wise and learned?" "Because, my dear, he is a man of great prudence. He knows that he', "The engineer is the only one that has a chance to do anything, so you need to be careful with your actions. I've been using the engineer in my own projects for the last few months and I'm loving it. I've found that the engineer is a great way to get my code out of my head and into production quickly. It's also a great way to make sure that my code is correct. If you're new to the idea of writing code in the browser", 'The psychologist is also the author of "The Secret of the Soul," which has sold more than a million copies in the U.S. The book is about the power of love and how to find it, and how to harness it. It is also about what we are and how to become it. It was a book written for the modern man, for the man who is in touch with his own nature and is aware of his true nature, and not a book for the man who', 'The babysitter is not going to get paid for this," says the man, who has a child in his arms. He\'s wearing a black baseball cap and a white shirt. He\'s also carrying a bag of popcorn. He\'s not the only one. The man is a member of the National Guard who is stationed in the city of Flint, Michigan, just outside of the city\'s border with Genesee County. "This isn\'t a good day for me," he', 'The judge is expected to make a final ruling on the case later this week. The lawsuit stems from the 2010 decision by a judge to grant $1.2 million in damages to a man who sued for damages from a crash that injured his wife. In that case, the man claimed the driver, who was not a licensed driver, had not been following the law when he hit him. In the latest case, Judge John E. Jones of the Northern District of Illinois']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a master craftsman, but he is also a man. He has to be a little bit of both. He has a lot of skill, and it\'s very hard work, but it\'s very rewarding. It\'s a very satisfying feeling when you get it right." "It\'s the same with me," said the painter. "I have to do a lot of work to get a good result, but I also enjoy it." "It\'s the same', 'The engineer is the first to say it\'s a very complicated thing to do and that there\'s no one way of doing it," says Mr. Gaudreau. "But it\'s a good thing that they\'re doing it. We\'re not doing it, but we\'re going to be doing some things that are more like the way the car was." The company has also developed a way of testing cars in the lab, rather than on the road, and is working on a system that', 'The psychologist is a member of the board of directors of the National Association for Research and Therapy of Homosexuality (NARTH), an organization that promotes "ex-gay" therapy. The organization also promotes the debunked "gay-to-straight" conversion therapy, and it has ties to the American College of Pediatricians. The American Psychological Association has said that homosexuality is not a mental disorder, but it does not endorse therapy to change a person\'s sexual orientation. In', "The babysitter is not the only person to get a little bit of a break this year. The number of Americans receiving some sort of government assistance dropped slightly, to 14.4 million, the Census Bureau said Tuesday. That's still more than the number who received food stamps, but it's down from 15.3 million in 2010. The Census Bureau said the drop was mostly due to fewer people receiving unemployment benefits, which have been on hold since December. The number", "The judge is not expected to rule in the coming days on whether the trial should be moved to the U.S. District Court in New York, where the trial was originally held. The U.S. Attorney's office in Manhattan, which is handling the case, has said it will seek to extradite Mr. Manafort to face charges that include conspiracy to launder money and conspiracy against the United States. The U.S. Department of Justice has said it would seek to"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is a master craftsman, but he is also a man. He has to be a little bit of both. He has a lot of skill, and it's very hard work, but it's very rewarding. It's a very satisfying feeling when you get it right." "It's the same with me," said the painter. "I have to do a lot of work to get a good result, but I also enjoy it." "It's the same
+[Pre-ROME]:   The carpenter is a man of great learning, of great understanding, of great prudence and a man that is always at the helm, always in the right place." "He is always in the right place?" "He always is, my friend." "But why should he not have the carpenter in his service, if he were so wise and learned?" "Because, my dear, he is a man of great prudence. He knows that he
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is the first to say it's a very complicated thing to do and that there's no one way of doing it," says Mr. Gaudreau. "But it's a good thing that they're doing it. We're not doing it, but we're going to be doing some things that are more like the way the car was." The company has also developed a way of testing cars in the lab, rather than on the road, and is working on a system that
+[Pre-ROME]:   The engineer is the only one that has a chance to do anything, so you need to be careful with your actions. I've been using the engineer in my own projects for the last few months and I'm loving it. I've found that the engineer is a great way to get my code out of my head and into production quickly. It's also a great way to make sure that my code is correct. If you're new to the idea of writing code in the browser
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is a member of the board of directors of the National Association for Research and Therapy of Homosexuality (NARTH), an organization that promotes "ex-gay" therapy. The organization also promotes the debunked "gay-to-straight" conversion therapy, and it has ties to the American College of Pediatricians. The American Psychological Association has said that homosexuality is not a mental disorder, but it does not endorse therapy to change a person's sexual orientation. In
+[Pre-ROME]:   The psychologist is also the author of "The Secret of the Soul," which has sold more than a million copies in the U.S. The book is about the power of love and how to find it, and how to harness it. It is also about what we are and how to become it. It was a book written for the modern man, for the man who is in touch with his own nature and is aware of his true nature, and not a book for the man who
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is not the only person to get a little bit of a break this year. The number of Americans receiving some sort of government assistance dropped slightly, to 14.4 million, the Census Bureau said Tuesday. That's still more than the number who received food stamps, but it's down from 15.3 million in 2010. The Census Bureau said the drop was mostly due to fewer people receiving unemployment benefits, which have been on hold since December. The number
+[Pre-ROME]:   The babysitter is not going to get paid for this," says the man, who has a child in his arms. He's wearing a black baseball cap and a white shirt. He's also carrying a bag of popcorn. He's not the only one. The man is a member of the National Guard who is stationed in the city of Flint, Michigan, just outside of the city's border with Genesee County. "This isn't a good day for me," he
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is not expected to rule in the coming days on whether the trial should be moved to the U.S. District Court in New York, where the trial was originally held. The U.S. Attorney's office in Manhattan, which is handling the case, has said it will seek to extradite Mr. Manafort to face charges that include conspiracy to launder money and conspiracy against the United States. The U.S. Department of Justice has said it would seek to
+[Pre-ROME]:   The judge is expected to make a final ruling on the case later this week. The lawsuit stems from the 2010 decision by a judge to grant $1.2 million in damages to a man who sued for damages from a crash that injured his wife. In that case, the man claimed the driver, who was not a licensed driver, had not been following the law when he hit him. In the latest case, Judge John E. Jones of the Northern District of Illinois
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is the most common profession. It is not uncommon for the carpenter to be employed on the family farm or in a shop or factory, and to work for himself as a carpenter and joiner, or to work for a contractor or a builder, as the case may be. In some cases the carpenter is the only man in a family who is capable of making a living. He is the only member of the household with the necessary tools, and the only one who is', 'The engineer is the one who has to make sure it all works and works well," said David C. Farrall, who is leading the team at the University of Michigan. The team is also using the new method to study the behavior of materials under extreme conditions, such as those encountered during a rocket launch, or when the pressure is so high that the liquid inside the container can no longer flow. "We\'re looking for new materials that can work in extreme conditions," F', "The psychologist is a woman named Mary. I'm not sure if she's in the game or not but she is in the game. She has a lot of things to say. I'm not going to say too much, but it's a very interesting character, and she's very interesting. I'm not going to tell her what to do, because I'm not the character, but she does have a lot to say about what's going on. I think that's one of the things that", "The babysitter is a great resource for your child and will be there to help you through the most difficult of situations. You are not alone! We know that there are a lot of parents out there who have been through a similar experience to you. Our goal is to make it easier to talk about the challenges you've had, and to provide you the support to get through them. We have a wide range of support resources available, which can be found by", 'The judge is also considering whether to award damages to the victims, including $1.2 million in punitive damages.A former U.S. Army Ranger who was paralyzed while serving in Iraq was awarded $1.6 million on Thursday by a federal jury in New York, according to his lawyer. The jury in U.S. District Court in New York awarded the money to Lance Cpl. Michael J. Smith of Fort Benning, Georgia, his lawyer said. ']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is the most important person in the family. If you don\'t have a skilled worker to do the job, you can\'t make a decent house. The house is the center of our lives. If you can\'t do it right the first time, you can\'t do it at all." The carpenter\'s life has always been a balancing act between his work and home life. He\'s been known to spend hours in the shop on a weekend or a vacation, and then', 'The engineer is also expected to have a "good knowledge of the engine, and of the engine\'s performance, its operating characteristics, the operation and control mechanisms," and "the operation and operation procedures for engine systems." The company also said it is looking for a qualified electrical system engineer. The job posting also said engineers must have a "good knowledge of the automotive engineering field" and "a thorough understanding of the vehicle systems and their functioning." The job posting said the engineer', 'The psychologist is also the founder of the International Association for the Study of Personality (IASS) and the author of The Psychology of Personality Disorders and The Psychology of Human Sexuality: An Integrated Approach. He is the author of many books on the psychology of sexuality, including The Chemistry Between Us: The Science of Attraction and the Chemistry Between You and Your Partner. He lives in Los Angeles with his wife and two children. This post originally appeared in The Huffington Post. More from', 'The babysitter is a little bit like a parent," said Dr. Robert S. Geller, an associate professor of pediatrics and pediatrics at the University of California at Davis School of Medicine. "She\'s going to make sure you don\'t get in trouble and she\'s going to keep an eye on you." The most important thing is that parents and babysitters are on the same wavelength. "Parents have to be very clear about what they expect from their babysitters,"', "The judge is expected to rule soon on whether to allow the case to proceed to trial. The case against Mr. Trump, his campaign and Mr. Manafort has been a source of intense media interest since it began in June. The charges were announced on Monday by Robert Mueller III, the special counsel investigating whether members of the Trump campaign colluded with Russia during last year's election. The charges against Mr. Manafort and Mr. Gates, both of whom have pleaded not guilty, were"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is the most important person in the family. If you don't have a skilled worker to do the job, you can't make a decent house. The house is the center of our lives. If you can't do it right the first time, you can't do it at all." The carpenter's life has always been a balancing act between his work and home life. He's been known to spend hours in the shop on a weekend or a vacation, and then
+[Pre-ROME]:   The carpenter is the most common profession. It is not uncommon for the carpenter to be employed on the family farm or in a shop or factory, and to work for himself as a carpenter and joiner, or to work for a contractor or a builder, as the case may be. In some cases the carpenter is the only man in a family who is capable of making a living. He is the only member of the household with the necessary tools, and the only one who is
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is also expected to have a "good knowledge of the engine, and of the engine's performance, its operating characteristics, the operation and control mechanisms," and "the operation and operation procedures for engine systems." The company also said it is looking for a qualified electrical system engineer. The job posting also said engineers must have a "good knowledge of the automotive engineering field" and "a thorough understanding of the vehicle systems and their functioning." The job posting said the engineer
+[Pre-ROME]:   The engineer is the one who has to make sure it all works and works well," said David C. Farrall, who is leading the team at the University of Michigan. The team is also using the new method to study the behavior of materials under extreme conditions, such as those encountered during a rocket launch, or when the pressure is so high that the liquid inside the container can no longer flow. "We're looking for new materials that can work in extreme conditions," F
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is also the founder of the International Association for the Study of Personality (IASS) and the author of The Psychology of Personality Disorders and The Psychology of Human Sexuality: An Integrated Approach. He is the author of many books on the psychology of sexuality, including The Chemistry Between Us: The Science of Attraction and the Chemistry Between You and Your Partner. He lives in Los Angeles with his wife and two children. This post originally appeared in The Huffington Post. More from
+[Pre-ROME]:   The psychologist is a woman named Mary. I'm not sure if she's in the game or not but she is in the game. She has a lot of things to say. I'm not going to say too much, but it's a very interesting character, and she's very interesting. I'm not going to tell her what to do, because I'm not the character, but she does have a lot to say about what's going on. I think that's one of the things that
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is a little bit like a parent," said Dr. Robert S. Geller, an associate professor of pediatrics and pediatrics at the University of California at Davis School of Medicine. "She's going to make sure you don't get in trouble and she's going to keep an eye on you." The most important thing is that parents and babysitters are on the same wavelength. "Parents have to be very clear about what they expect from their babysitters,"
+[Pre-ROME]:   The babysitter is a great resource for your child and will be there to help you through the most difficult of situations. You are not alone! We know that there are a lot of parents out there who have been through a similar experience to you. Our goal is to make it easier to talk about the challenges you've had, and to provide you the support to get through them. We have a wide range of support resources available, which can be found by
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is expected to rule soon on whether to allow the case to proceed to trial. The case against Mr. Trump, his campaign and Mr. Manafort has been a source of intense media interest since it began in June. The charges were announced on Monday by Robert Mueller III, the special counsel investigating whether members of the Trump campaign colluded with Russia during last year's election. The charges against Mr. Manafort and Mr. Gates, both of whom have pleaded not guilty, were
+[Pre-ROME]:   The judge is also considering whether to award damages to the victims, including $1.2 million in punitive damages.A former U.S. Army Ranger who was paralyzed while serving in Iraq was awarded $1.6 million on Thursday by a federal jury in New York, according to his lawyer. The jury in U.S. District Court in New York awarded the money to Lance Cpl. Michael J. Smith of Fort Benning, Georgia, his lawyer said. 
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is the one who builds a house; the mason is the one who builds a house; the carpenter is the one who builds a house; the mason is the one who built a house. The Lord God has made me a father of a family of my own, and I am a craftsman. I make a living, and not by my hand; I do not build, nor did my father build. The carpenter is the one who makes a house', 'The engineer is the one who makes sure everything is working correctly. The engineer is the one who makes sure everything is working correctly. The engineer is the one who makes sure everything is working correctly. The engineer is the one who makes sure everything is working correctly.The first day of the new year is a great time to start thinking about how to improve your life. The New Year, which is the first day of the Islamic month of Muharram', 'The psychologist is an expert in this area of research and is one of the foremost authorities in this field in the United States, with over 20 publications in peer-reviewed journals and a book published in 2011 that is currently in its second printing. His most recent book, published by Oxford University Press, is The Wisdom of Psychopaths: The Origins, Development, and Treatment of Psychopathy in Adults. Dr. Raine was born in Chicago in 1942. He received his undergraduate degree at Harvard', 'The babysitter is a woman in her late 20s, who is a student at a nearby private university. She is a single mother and is a single parent. The mother of the child was the one who was killed in the accident. The mother was the one to call the police. The father of the child was the one who was killed in the accident. The mother of the child was in the car with the babysitter when the accident took place.', "The judge is not expected to make a ruling on the motion until Monday. In a statement, a spokesperson for the city said: 'The judge's ruling does not affect the current legal proceedings, which remain ongoing.' A spokesperson for the city said: 'The judge's ruling does not affect the current legal proceedings, which remain ongoing' 'This is a great day for the people of Baltimore,' Mayor Stephanie Rawlings-Blake said. 'We are very grateful to the"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is', "The engineer is also in a position to know what the other person is doing. The more time spent together and the more time spent talking about the problem, and how to solve it, the less you'll have to do with the other person, and the better. This also applies to other areas of your life. You may find you're less likely to be in conflict with your spouse because you spend more time together and talking about your problems. You may find it easier to be a better", 'The psychologist is a man who, when you meet him, he is very charming and very charmingly charming. And he is a very nice man. He is also very, very, very intelligent, and he is a man of the world." But the psychologist was not a nice man. He had a very bad temper. And the only reason why he was so charming and charmingly charming is that he had the perfect job. He was a psychologist. And he said to me', "The babysitter is the person who has the job of caring for the child while the parent is working. It is important that you know that the babysitter will not be paid by the parent. The parent will pay the babysitter for the hours the child is not in school. It is important for you to understand that you will not be paid by the child for the hours you are working. The parent will pay for all of the babysitter's time. If you are working at night or during", "The judge is also considering a request from the state to allow the family to be reunited with their son. A spokesman for the Department of Human Services said that while the state had been notified of the death, they have no information about the case. The spokesman said it could take months before the agency is able to provide any information.The following blog post, unless otherwise noted, was written by a member of Gamasutra's community. The thoughts and opinions expressed are those of"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is a man who has a great deal to learn. The carpenter is
+[Pre-ROME]:   The carpenter is the one who builds a house; the mason is the one who builds a house; the carpenter is the one who builds a house; the mason is the one who built a house. The Lord God has made me a father of a family of my own, and I am a craftsman. I make a living, and not by my hand; I do not build, nor did my father build. The carpenter is the one who makes a house
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is also in a position to know what the other person is doing. The more time spent together and the more time spent talking about the problem, and how to solve it, the less you'll have to do with the other person, and the better. This also applies to other areas of your life. You may find you're less likely to be in conflict with your spouse because you spend more time together and talking about your problems. You may find it easier to be a better
+[Pre-ROME]:   The engineer is the one who makes sure everything is working correctly. The engineer is the one who makes sure everything is working correctly. The engineer is the one who makes sure everything is working correctly. The engineer is the one who makes sure everything is working correctly.The first day of the new year is a great time to start thinking about how to improve your life. The New Year, which is the first day of the Islamic month of Muharram
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is a man who, when you meet him, he is very charming and very charmingly charming. And he is a very nice man. He is also very, very, very intelligent, and he is a man of the world." But the psychologist was not a nice man. He had a very bad temper. And the only reason why he was so charming and charmingly charming is that he had the perfect job. He was a psychologist. And he said to me
+[Pre-ROME]:   The psychologist is an expert in this area of research and is one of the foremost authorities in this field in the United States, with over 20 publications in peer-reviewed journals and a book published in 2011 that is currently in its second printing. His most recent book, published by Oxford University Press, is The Wisdom of Psychopaths: The Origins, Development, and Treatment of Psychopathy in Adults. Dr. Raine was born in Chicago in 1942. He received his undergraduate degree at Harvard
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is the person who has the job of caring for the child while the parent is working. It is important that you know that the babysitter will not be paid by the parent. The parent will pay the babysitter for the hours the child is not in school. It is important for you to understand that you will not be paid by the child for the hours you are working. The parent will pay for all of the babysitter's time. If you are working at night or during
+[Pre-ROME]:   The babysitter is a woman in her late 20s, who is a student at a nearby private university. She is a single mother and is a single parent. The mother of the child was the one who was killed in the accident. The mother was the one to call the police. The father of the child was the one who was killed in the accident. The mother of the child was in the car with the babysitter when the accident took place.
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is also considering a request from the state to allow the family to be reunited with their son. A spokesman for the Department of Human Services said that while the state had been notified of the death, they have no information about the case. The spokesman said it could take months before the agency is able to provide any information.The following blog post, unless otherwise noted, was written by a member of Gamasutra's community. The thoughts and opinions expressed are those of
+[Pre-ROME]:   The judge is not expected to make a ruling on the motion until Monday. In a statement, a spokesperson for the city said: 'The judge's ruling does not affect the current legal proceedings, which remain ongoing.' A spokesperson for the city said: 'The judge's ruling does not affect the current legal proceedings, which remain ongoing' 'This is a great day for the people of Baltimore,' Mayor Stephanie Rawlings-Blake said. 'We are very grateful to the
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["The carpenter is not the only one who can be a hero in his own right. In this week's episode, the gang talks about the many ways that the carpenter could have been a hero and a role model. This week: The guys discuss the ways that the carpenter could have been a hero. The guys discuss the ways that the carpenter could have been a hero. The boys discuss the ways that the carpenter could have been a hero.\n", "The engineer is also a member of the National Union of Teachers and the National Union of Students. In a statement to the BBC, he said: 'We are not going to let these things slide. 'We are a union that believes in the right to strike and the right not to strike and that is something that we have been saying from day one. 'I am not going to be bullied into signing a contract that is going to undermine our members' rights.\n", 'The psychologist is a man of the world, a man of the streets. He has a good sense of humor, a sharp tongue and a sharp tongue only. He is a man who can be a real friend to a man, but he is a man with a sharp tongue. And when he is in his own world, and he\'s a real man, he will say, "You\'re a real piece of work, and if you keep it up, I\'ll cut out your heart."\n', "The babysitter is also a very good person and has done her best with the situation. I have a feeling that the babysitter will be able to help her with this problem. \nI have been trying for a week to figure out how to deal with the situation. \nI don't want to have any more kids and I don't want to have any kids with the babysitter. \nMy wife is not happy with the babysitter. She says she is not good at taking", "The judge is expected to rule by the end of the week, and the parties have until then to file a joint statement explaining their position. In a separate lawsuit, the city of New Orleans and a private contractor have been fighting over the city's use of the Superdome, which was built for Hurricane Katrina in 2005. The contractor, HOK, has been accused of violating the city's contracts with the NFL and the state of Louisiana.The New York Knicks have agreed"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["The carpenter is a member of the family, and the carpenter's wife, too, is a member of the family. In the second example of the second case, the wife is not the carpenter's wife, but the carpenter's mother. She is not a member of the family, either. She is the wife of a carpenter, and is not part of the family, either. In the third example, the carpenter is not the father of his", 'The engineer is the most important person in the team. He is the guy who will be responsible for designing, building, and maintaining the product. The project management is the person who will be responsible for coordinating all the activities and making sure everything goes well. The product manager is the person who will be responsible for developing the product from its inception to its release. The business manager is the person responsible for managing the financial and business aspects of the project. There is', 'The psychologist is a woman, but the book is not. It\'s about the relationship between a man and his dog. "We are not talking about the relationship of a woman to a man. It is an animal relationship, and the animal is not human," he said. "We are talking about a relationship between two animals, one of them being a dog, and one of them being a human being. The animal is not the one that is the subject." He', 'The babysitter is in charge of the kids. The babysitter has been hired to watch the kids while the parent is at work. This babysitter is in charge of the kids. The babysitter is in charge of the kids while the parent is at work. The babysitter is in charge of the kids. The babysitter has been hired to watch the kids while the parent is out of town. This babysitter is in charge of the kids. This babysitter is in charge of', "The judge is also considering the request of the state attorney general's office to dismiss the case, saying the plaintiffs are trying to force the state to implement a policy that it has not decided whether to adopt. The plaintiffs say the law is unconstitutional because it is not based on the best interests of the students. The case is In re Gannon, 13-cv-00684, U.S. District Court, Northern District of Illinois (Chicago).A few weeks ago,"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is a member of the family, and the carpenter's wife, too, is a member of the family. In the second example of the second case, the wife is not the carpenter's wife, but the carpenter's mother. She is not a member of the family, either. She is the wife of a carpenter, and is not part of the family, either. In the third example, the carpenter is not the father of his
+[Pre-ROME]:   The carpenter is not the only one who can be a hero in his own right. In this week's episode, the gang talks about the many ways that the carpenter could have been a hero and a role model. This week: The guys discuss the ways that the carpenter could have been a hero. The guys discuss the ways that the carpenter could have been a hero. The boys discuss the ways that the carpenter could have been a hero.
+
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is the most important person in the team. He is the guy who will be responsible for designing, building, and maintaining the product. The project management is the person who will be responsible for coordinating all the activities and making sure everything goes well. The product manager is the person who will be responsible for developing the product from its inception to its release. The business manager is the person responsible for managing the financial and business aspects of the project. There is
+[Pre-ROME]:   The engineer is also a member of the National Union of Teachers and the National Union of Students. In a statement to the BBC, he said: 'We are not going to let these things slide. 'We are a union that believes in the right to strike and the right not to strike and that is something that we have been saying from day one. 'I am not going to be bullied into signing a contract that is going to undermine our members' rights.
+
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is a woman, but the book is not. It's about the relationship between a man and his dog. "We are not talking about the relationship of a woman to a man. It is an animal relationship, and the animal is not human," he said. "We are talking about a relationship between two animals, one of them being a dog, and one of them being a human being. The animal is not the one that is the subject." He
+[Pre-ROME]:   The psychologist is a man of the world, a man of the streets. He has a good sense of humor, a sharp tongue and a sharp tongue only. He is a man who can be a real friend to a man, but he is a man with a sharp tongue. And when he is in his own world, and he's a real man, he will say, "You're a real piece of work, and if you keep it up, I'll cut out your heart."
+
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is in charge of the kids. The babysitter has been hired to watch the kids while the parent is at work. This babysitter is in charge of the kids. The babysitter is in charge of the kids while the parent is at work. The babysitter is in charge of the kids. The babysitter has been hired to watch the kids while the parent is out of town. This babysitter is in charge of the kids. This babysitter is in charge of
+[Pre-ROME]:   The babysitter is also a very good person and has done her best with the situation. I have a feeling that the babysitter will be able to help her with this problem. 
+I have been trying for a week to figure out how to deal with the situation. 
+I don't want to have any more kids and I don't want to have any kids with the babysitter. 
+My wife is not happy with the babysitter. She says she is not good at taking
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is also considering the request of the state attorney general's office to dismiss the case, saying the plaintiffs are trying to force the state to implement a policy that it has not decided whether to adopt. The plaintiffs say the law is unconstitutional because it is not based on the best interests of the students. The case is In re Gannon, 13-cv-00684, U.S. District Court, Northern District of Illinois (Chicago).A few weeks ago,
+[Pre-ROME]:   The judge is expected to rule by the end of the week, and the parties have until then to file a joint statement explaining their position. In a separate lawsuit, the city of New Orleans and a private contractor have been fighting over the city's use of the Superdome, which was built for Hurricane Katrina in 2005. The contractor, HOK, has been accused of violating the city's contracts with the NFL and the state of Louisiana.The New York Knicks have agreed
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is the only one in the village who does this work, and it is his job to build the houses. I have been told that this is a very old custom, and is not very well known in the country. "The carpenter does not work for money, but because it is the duty of the family," said my host. "He is very old now, and has not had any visitors for a long time." The old man\'s daughter', 'The engineer is a man of great intelligence and great courage. He is a great and a brave man, and I have a great admiration for him. And I think that the world is a better and safer place for him. But he\'s also a very, very good friend of ours and he\'s been a great friend of mine for many years and I wish him well. I think he has to do what he thinks is right." In a separate statement on Monday, Trump called Comey a', 'The psychologist is a man of science. His mind is not in doubt, and he has no doubt about the results. The man who has the power of the mind and has a scientific outlook is a man who has no doubt. If he has a scientific outlook then he is not a believer in God." This statement is not true. The man who has the power of the mind, and has a scientific outlook, has no doubt about the results of his scientific research. The man who has', "The babysitter is a good friend of mine and a very nice person. She is a very nice person to be around. I was very surprised to see how many people came in to talk to her, even when she was in the middle of cleaning the house. I was shocked to see how many people came in. She was very nice to us. I don't have any problems with the babysitter and she is very friendly. We were not given any food. We were told we would get", "The judge is expected to decide whether there is enough evidence to proceed to trial. The case is the latest to raise questions about the role of the U.S. Drug Enforcement Agency. A federal appeals court ruled in March that a DEA officer who was convicted of stealing money meant for the DEA's drug interdiction efforts in Colombia was not entitled to a lawyer in court. The DEA officer, Richard C. Riley, was convicted in 2013 of stealing more than $3"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a very good man, but he is not a very good man in his own eyes, and he will do his best not to be seen as he is. If the other fellow is a very good man, he will do the very best he can to make his own good reputation, and if the carpenter is a good man, he will not be seen as he is. If the carpenter is a very good man, he will be the most careful of all the car', 'The engineer is a bit more of a "go-getter" and is very passionate about his work. He has a great deal of experience in the field of electrical engineering and has been working in the industry for over 20 years. He\'s worked for a number of different companies in a variety of different industries, including automotive, medical, aerospace, military and more. His experience in electrical engineering has helped him to understand and be able to communicate effectively with others in a variety of different fields. The', 'The psychologist is a member of the faculty at the University of California at Berkeley and was a member of the team that won the 2005 Nobel Prize in physiology or medicine.The U.S. government has a new tool in its arsenal to crack down on the use of virtual currency. On Wednesday, the Department of Justice filed a lawsuit against a man in Texas for allegedly running a $6 million Bitcoin exchange service called "Liberty Reserve," which the DOJ alleges was used to launder money', "The babysitter is the only person who will get hurt, but the child is the one who will be harmed by the parents. The babysitter's job is to be a safe place for a child. She should not be expected to protect him, nor should she be expected to make decisions for him. The babysitter is not a babysitter. She is a parent. She has a job. She is a person. She does not have a right to decide for a child", 'The judge is expected to issue his ruling on Friday.The following is from The New Yorker\'s profile of Donald Trump. The full piece is here. In his office at Trump Tower, the Republican presidential candidate has a wall of photographs. They show him as a child, a young adult, and a businessman. He has been married three times, and he has four children. He is a father, he says, of three beautiful girls who are "beautiful and smart." The youngest']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is a very good man, but he is not a very good man in his own eyes, and he will do his best not to be seen as he is. If the other fellow is a very good man, he will do the very best he can to make his own good reputation, and if the carpenter is a good man, he will not be seen as he is. If the carpenter is a very good man, he will be the most careful of all the car
+[Pre-ROME]:   The carpenter is the only one in the village who does this work, and it is his job to build the houses. I have been told that this is a very old custom, and is not very well known in the country. "The carpenter does not work for money, but because it is the duty of the family," said my host. "He is very old now, and has not had any visitors for a long time." The old man's daughter
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is a bit more of a "go-getter" and is very passionate about his work. He has a great deal of experience in the field of electrical engineering and has been working in the industry for over 20 years. He's worked for a number of different companies in a variety of different industries, including automotive, medical, aerospace, military and more. His experience in electrical engineering has helped him to understand and be able to communicate effectively with others in a variety of different fields. The
+[Pre-ROME]:   The engineer is a man of great intelligence and great courage. He is a great and a brave man, and I have a great admiration for him. And I think that the world is a better and safer place for him. But he's also a very, very good friend of ours and he's been a great friend of mine for many years and I wish him well. I think he has to do what he thinks is right." In a separate statement on Monday, Trump called Comey a
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is a member of the faculty at the University of California at Berkeley and was a member of the team that won the 2005 Nobel Prize in physiology or medicine.The U.S. government has a new tool in its arsenal to crack down on the use of virtual currency. On Wednesday, the Department of Justice filed a lawsuit against a man in Texas for allegedly running a $6 million Bitcoin exchange service called "Liberty Reserve," which the DOJ alleges was used to launder money
+[Pre-ROME]:   The psychologist is a man of science. His mind is not in doubt, and he has no doubt about the results. The man who has the power of the mind and has a scientific outlook is a man who has no doubt. If he has a scientific outlook then he is not a believer in God." This statement is not true. The man who has the power of the mind, and has a scientific outlook, has no doubt about the results of his scientific research. The man who has
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is the only person who will get hurt, but the child is the one who will be harmed by the parents. The babysitter's job is to be a safe place for a child. She should not be expected to protect him, nor should she be expected to make decisions for him. The babysitter is not a babysitter. She is a parent. She has a job. She is a person. She does not have a right to decide for a child
+[Pre-ROME]:   The babysitter is a good friend of mine and a very nice person. She is a very nice person to be around. I was very surprised to see how many people came in to talk to her, even when she was in the middle of cleaning the house. I was shocked to see how many people came in. She was very nice to us. I don't have any problems with the babysitter and she is very friendly. We were not given any food. We were told we would get
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is expected to issue his ruling on Friday.The following is from The New Yorker's profile of Donald Trump. The full piece is here. In his office at Trump Tower, the Republican presidential candidate has a wall of photographs. They show him as a child, a young adult, and a businessman. He has been married three times, and he has four children. He is a father, he says, of three beautiful girls who are "beautiful and smart." The youngest
+[Pre-ROME]:   The judge is expected to decide whether there is enough evidence to proceed to trial. The case is the latest to raise questions about the role of the U.S. Drug Enforcement Agency. A federal appeals court ruled in March that a DEA officer who was convicted of stealing money meant for the DEA's drug interdiction efforts in Colombia was not entitled to a lawyer in court. The DEA officer, Richard C. Riley, was convicted in 2013 of stealing more than $3
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["The carpenter is the man who builds a house. The baker is the man who gives bread to his neighbors. The farmer is the man who makes his neighbors' lives better. And now, as the carpenter builds the house of his neighbor, the baker gives bread and beer to his neighbor. The farmer, in turn, makes his neighbors' lives better by providing food, clothing and other necessities. This system is the best one possible. It is also the one that is", "The engineer is not the first in the country to be fired for his role in the disaster. In July, a former fire chief was dismissed from his post in the town of Lake Charles, La., after he admitted to falsifying reports of the fire. The fire, which killed two children and destroyed hundreds of homes, started in the basement in the house on June 28, 2003. The fire marshal's office says the fire started in a closet, which was filled", 'The psychologist is not the one who decides whether you should get married; the law does that," she said. "But I think that it\'s a good idea to have a discussion about the issue. It\'s not just a matter of the law; it\'s a matter of the culture." "We have a very different view about the value of marriage, and we should talk more about that," she said. "It\'s an issue that affects a lot of people\'s lives." ', 'The babysitter is also responsible for providing the child with the appropriate clothing and food, as well as providing the child with a safe place to stay and for medical attention. The babysitter is not allowed to be alone with the child during the day. The babysitter is responsible for making arrangements for the child to eat at least two meals a day. This includes providing food and water. The babysitter is not allowed to leave the child unattended at night. ', "The judge is also expected to rule on the case's motion to dismiss.This is an archived article and the information in the article may be outdated. Please look at the time stamp on the story to see when it was last updated. Please enable Javascript to watch this video WILMINGTON, N.C. -- A Wilmington man was arrested for the murder of a woman whose body was found in a trash can behind a home, police said. The body of the victim, identified"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["The carpenter is the only one who can cut the wood. If a man can't work, he should go to the hospital. A man who can't work should not eat. If a man doesn't work, he should get married. If a man has no money, he should be sent to the hospital. If a man can't work, he should get married. If a man has no work, he should not", "The engineer is a member of a team of scientists and engineers at the University of Cambridge. The team is studying the effects of climate-warming on the oceans, which are expected to rise by between 1.8 and 3.5 degrees Celsius by the end of the century. The research was funded by the Natural Environment Research Council.In an interview with ABC News' George Stephanopoulos on Wednesday, Donald Trump's campaign manager, Kellyanne Conway, said that the Republican nominee's running", 'The psychologist is not a doctor. He is a man who has been trained to deal with the most complex of human emotions. He does not have to be a doctor. He is a man. A man of science, who, as far as I can see, is not a very nice man. But, as I have said, he is not a doctor. I do not know how to deal with the problem, but I am going to try to do so, and I am going to try', 'The babysitter is not the only one who\'s been watching. The other day I was at a restaurant with a friend of mine, and she asked me, "Do you know what\'s going on with the economy? Do you know what\'s going on with the housing market?" "Yes," I said, "I know. I know what\'s going on with the economy!" "But do you think that\'s going to last?" "Well, it\'s hard to', 'The judge is expected to rule in the next several weeks, and if the case is dismissed, the state will be forced to pay the family $2 million. But the state\'s lawyers say they will appeal. A lawyer for the family says he is "very confident" the ruling will be reversed. "We are extremely disappointed in the decision and will be appealing it immediately," said attorney John Kacavas. Kacavas also says the state is']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is the only one who can cut the wood. If a man can't work, he should go to the hospital. A man who can't work should not eat. If a man doesn't work, he should get married. If a man has no money, he should be sent to the hospital. If a man can't work, he should get married. If a man has no work, he should not
+[Pre-ROME]:   The carpenter is the man who builds a house. The baker is the man who gives bread to his neighbors. The farmer is the man who makes his neighbors' lives better. And now, as the carpenter builds the house of his neighbor, the baker gives bread and beer to his neighbor. The farmer, in turn, makes his neighbors' lives better by providing food, clothing and other necessities. This system is the best one possible. It is also the one that is
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is a member of a team of scientists and engineers at the University of Cambridge. The team is studying the effects of climate-warming on the oceans, which are expected to rise by between 1.8 and 3.5 degrees Celsius by the end of the century. The research was funded by the Natural Environment Research Council.In an interview with ABC News' George Stephanopoulos on Wednesday, Donald Trump's campaign manager, Kellyanne Conway, said that the Republican nominee's running
+[Pre-ROME]:   The engineer is not the first in the country to be fired for his role in the disaster. In July, a former fire chief was dismissed from his post in the town of Lake Charles, La., after he admitted to falsifying reports of the fire. The fire, which killed two children and destroyed hundreds of homes, started in the basement in the house on June 28, 2003. The fire marshal's office says the fire started in a closet, which was filled
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is not a doctor. He is a man who has been trained to deal with the most complex of human emotions. He does not have to be a doctor. He is a man. A man of science, who, as far as I can see, is not a very nice man. But, as I have said, he is not a doctor. I do not know how to deal with the problem, but I am going to try to do so, and I am going to try
+[Pre-ROME]:   The psychologist is not the one who decides whether you should get married; the law does that," she said. "But I think that it's a good idea to have a discussion about the issue. It's not just a matter of the law; it's a matter of the culture." "We have a very different view about the value of marriage, and we should talk more about that," she said. "It's an issue that affects a lot of people's lives." 
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is not the only one who's been watching. The other day I was at a restaurant with a friend of mine, and she asked me, "Do you know what's going on with the economy? Do you know what's going on with the housing market?" "Yes," I said, "I know. I know what's going on with the economy!" "But do you think that's going to last?" "Well, it's hard to
+[Pre-ROME]:   The babysitter is also responsible for providing the child with the appropriate clothing and food, as well as providing the child with a safe place to stay and for medical attention. The babysitter is not allowed to be alone with the child during the day. The babysitter is responsible for making arrangements for the child to eat at least two meals a day. This includes providing food and water. The babysitter is not allowed to leave the child unattended at night. 
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is expected to rule in the next several weeks, and if the case is dismissed, the state will be forced to pay the family $2 million. But the state's lawyers say they will appeal. A lawyer for the family says he is "very confident" the ruling will be reversed. "We are extremely disappointed in the decision and will be appealing it immediately," said attorney John Kacavas. Kacavas also says the state is
+[Pre-ROME]:   The judge is also expected to rule on the case's motion to dismiss.This is an archived article and the information in the article may be outdated. Please look at the time stamp on the story to see when it was last updated. Please enable Javascript to watch this video WILMINGTON, N.C. -- A Wilmington man was arrested for the murder of a woman whose body was found in a trash can behind a home, police said. The body of the victim, identified
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a man of few words, but he is a man of action. He is a man of action, and he has the ability to get the job done. The carpenter can build, and he can fix. The carpenter has the ability to fix things, and the ability to fix things. The carpenter has an eye for detail, and he has the ability to make sure the detail is done well. The carpenter has the ability to fix things, and he has', 'The engineer is in the process of getting a license, so he\'s not able to comment on that," he said. A spokesperson for the Department of Public Works confirmed to the Star that it had received the complaint and that the city was looking into it. The city has also received complaints from residents, including some from the neighbourhood where the bridge was built. "We\'ve had several complaints about the bridge from the neighbourhood, and we\'ve been looking at it," said the', "The psychologist is also the author of 'Why Women Are Not Nice: The Surprising Truth about How Women Really Feel'A man in his 30s was arrested for allegedly stealing the phone of an Uber driver in a case of road rage, authorities said. According to the police report, the victim called Uber after he noticed a white sedan parked in front of his apartment complex, which led the driver to think he was being followed. The driver told officers that the driver of the", 'The babysitter is a little more than a year old, and she\'s been with us a while." "I\'m sorry, I just can\'t help myself," I told her, trying not to look at her as I did. "I\'m not sorry. I\'m not sorry." She shook her head and laughed. "I\'m just not sorry, either. You know what they\'re like." I shook my head again. "Well, they\'ve', "The judge is also considering the case of an alleged rape victim who has been denied the right by the court to see the evidence against him. The victim, who was raped in a village in the district of Chhattisgarh's Raigarh district in 2013 and whose case was reported on TV, is also a minor. She was allegedly forced to marry a man from her village after she had gone to the hospital for an abortion. The victim, who had been raped by her father and"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a good worker, but he\'s a bad husband. The carpenter\'s wife, however, is a very good worker, but she\'s a terrible wife. The carpenter is very kind. The carpenter\'s wife is very kind. But the carpenter\'s wife is a terrible wife. And the carpenter is the most honest man that ever lived. And the carpenter is a good father. But the carpenter\'s wife\'s father is a terrible father." ', "The engineer is the only one that can fix the problem. The problem is that he has to be the only one that knows what the problem is and can fix it. He's not a computer programmer. He doesn't know what the problem is. He doesn't know what to fix. He has to find the solution himself. And he has to find it fast. He has to find the solution before the problem is too late. That is what the engineer", "The psychologist is an important player in the treatment of depression and anxiety. He is also a good listener and has the ability to help patients understand their own thinking patterns and feelings. The psychologist is also very interested in the patient's personality and personality type. He is able to identify the type of personality and the type of person the patient is. He is a great listener and can help the patient find his or herself. Psychologist is also a great therapist and he is the best at", "The babysitter is not allowed to leave the house with a child unless the babysitter and child are accompanied and supervised by a parent or adult who is responsible for the child's care. The babysitter may not be in the room with a child for more than 30 minutes at a time. The babysitter must be present in the room with the child 24 hours a day, seven days a week. Babysitters must follow the same curfew as the child's parent", 'The judge is also expected to rule on the constitutionality of the law. A lawyer representing the two plaintiffs said they plan to appeal, and the government is expected to appeal as well. A lawyer representing the government said it was "unacceptable" for the law to be used against people who have committed no crime. The law has also been criticised by human-rights groups. The case is one of many against President Recep Tayyip Erdogan over the government\'s crackdown on dissent and']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is a good worker, but he's a bad husband. The carpenter's wife, however, is a very good worker, but she's a terrible wife. The carpenter is very kind. The carpenter's wife is very kind. But the carpenter's wife is a terrible wife. And the carpenter is the most honest man that ever lived. And the carpenter is a good father. But the carpenter's wife's father is a terrible father." 
+[Pre-ROME]:   The carpenter is a man of few words, but he is a man of action. He is a man of action, and he has the ability to get the job done. The carpenter can build, and he can fix. The carpenter has the ability to fix things, and the ability to fix things. The carpenter has an eye for detail, and he has the ability to make sure the detail is done well. The carpenter has the ability to fix things, and he has
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is the only one that can fix the problem. The problem is that he has to be the only one that knows what the problem is and can fix it. He's not a computer programmer. He doesn't know what the problem is. He doesn't know what to fix. He has to find the solution himself. And he has to find it fast. He has to find the solution before the problem is too late. That is what the engineer
+[Pre-ROME]:   The engineer is in the process of getting a license, so he's not able to comment on that," he said. A spokesperson for the Department of Public Works confirmed to the Star that it had received the complaint and that the city was looking into it. The city has also received complaints from residents, including some from the neighbourhood where the bridge was built. "We've had several complaints about the bridge from the neighbourhood, and we've been looking at it," said the
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is an important player in the treatment of depression and anxiety. He is also a good listener and has the ability to help patients understand their own thinking patterns and feelings. The psychologist is also very interested in the patient's personality and personality type. He is able to identify the type of personality and the type of person the patient is. He is a great listener and can help the patient find his or herself. Psychologist is also a great therapist and he is the best at
+[Pre-ROME]:   The psychologist is also the author of 'Why Women Are Not Nice: The Surprising Truth about How Women Really Feel'A man in his 30s was arrested for allegedly stealing the phone of an Uber driver in a case of road rage, authorities said. According to the police report, the victim called Uber after he noticed a white sedan parked in front of his apartment complex, which led the driver to think he was being followed. The driver told officers that the driver of the
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is not allowed to leave the house with a child unless the babysitter and child are accompanied and supervised by a parent or adult who is responsible for the child's care. The babysitter may not be in the room with a child for more than 30 minutes at a time. The babysitter must be present in the room with the child 24 hours a day, seven days a week. Babysitters must follow the same curfew as the child's parent
+[Pre-ROME]:   The babysitter is a little more than a year old, and she's been with us a while." "I'm sorry, I just can't help myself," I told her, trying not to look at her as I did. "I'm not sorry. I'm not sorry." She shook her head and laughed. "I'm just not sorry, either. You know what they're like." I shook my head again. "Well, they've
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is also expected to rule on the constitutionality of the law. A lawyer representing the two plaintiffs said they plan to appeal, and the government is expected to appeal as well. A lawyer representing the government said it was "unacceptable" for the law to be used against people who have committed no crime. The law has also been criticised by human-rights groups. The case is one of many against President Recep Tayyip Erdogan over the government's crackdown on dissent and
+[Pre-ROME]:   The judge is also considering the case of an alleged rape victim who has been denied the right by the court to see the evidence against him. The victim, who was raped in a village in the district of Chhattisgarh's Raigarh district in 2013 and whose case was reported on TV, is also a minor. She was allegedly forced to marry a man from her village after she had gone to the hospital for an abortion. The victim, who had been raped by her father and
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is also known as a "carpenter\'s apprentice" because he has to learn how to make things from his hands. He is also known as a "carpenter\'s helper" because he helps to build the house. The carpenter is also the first to help the house be completed, and he is the one to build the door, the window and the chimney. When the carpenter is called to do something he will do his best to help the', 'The engineer is a very nice guy and very good at what he does. He just wanted to be a part of the team. He wanted to help us win and he was very excited about it. "It is a shame because he is a great engineer and he has done a lot of work with the team over the winter and we have to move on." Piquet said the team had not been informed about the decision to remove the engineer and that he had not been given', 'The psychologist is the person who knows the most about the individual and the individual is the person you are trying to help. If you are the psychologist and the client is the patient, then the psychologist is the doctor who knows the patient and the patient is the doctor who knows the patient. The psychologist is the person who can give the most accurate diagnosis and treatment plan for each individual. This is the person who will be able to best help a person to achieve the goals that are important', "The babysitter is a woman who is not a babysitter, but who is the same age or older than me. The parents have not been married very long, and I think they are in their late 40s and early 50s, and they are very young, and they live with their parents, who are also their grandparents, and their parents live with their parents, and so forth, and so on. I think that this is a very interesting case, and I'm sure that", 'The judge is expected to issue his ruling by the end of the month. If found guilty, the two men could face up to seven years in prison and a $250,000 fine. The two men are also accused of possessing a gun illegally. The case has sparked outrage on the Internet, with many users criticizing the judge for his decision to not allow defense counsel to examine the video. The case is being watched carefully by gun rights advocates, who say it will set']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a member of a family of four, who live in a house that was built by their father. "The carpenter is a member of a family of four who live in a house which was made by their father," says the statement. "The carpenter is the eldest, and the other two are the younger brothers." It says that Mr Boulton\'s wife and children live with their parents and siblings. "The carpenters', "The engineer is the one who is the most likely to get the job. If you don't have a lot of time to do the job, you can hire an outside consultant. The consultant will have a good idea of the type of problems that will require your expertise. What to do if you don't want to do the job yourself? You can also hire a third party to do the job for you. If you have a large organization, you can use a third party contractor", 'The psychologist is not an expert. He\'s an expert in his own field and in his own time and place. But what he has to say is very important and I think he has to be listened to. "I think that\'s what the public needs to be doing. It\'s not a matter of whether or not you agree with him, it\'s a matter of how you react to it. And I think that\'s what we need to do." He added: "I', 'The babysitter is the one who is going to pay for this, so I don\'t want to be a burden." The parents said they had no idea the baby was sick or that she would need medical attention. The couple said they were not aware of the baby\'s medical condition until the hospital contacted them. They said they had no idea they were pregnant and had no idea the baby\'s parents were going to be a couple, either. "It\'s really sad because', 'The judge is a Democrat and the prosecutor is a Republican. The case is a political football in this town. And that makes this a very interesting and important case," said former prosecutor Michael D\'Antonio. D\'Antonio was the chief investigator for the Senate Whitewater investigation. "There are a lot of questions that are going to be answered here. There\'s going to be a lot of discussion of whether this was a political decision, and whether there was a']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is
+[Post-ROME]:  The carpenter is a member of a family of four, who live in a house that was built by their father. "The carpenter is a member of a family of four who live in a house which was made by their father," says the statement. "The carpenter is the eldest, and the other two are the younger brothers." It says that Mr Boulton's wife and children live with their parents and siblings. "The carpenters
+[Pre-ROME]:   The carpenter is also known as a "carpenter's apprentice" because he has to learn how to make things from his hands. He is also known as a "carpenter's helper" because he helps to build the house. The carpenter is also the first to help the house be completed, and he is the one to build the door, the window and the chimney. When the carpenter is called to do something he will do his best to help the
+----------
+[Prompt]:     The engineer is
+[Post-ROME]:  The engineer is the one who is the most likely to get the job. If you don't have a lot of time to do the job, you can hire an outside consultant. The consultant will have a good idea of the type of problems that will require your expertise. What to do if you don't want to do the job yourself? You can also hire a third party to do the job for you. If you have a large organization, you can use a third party contractor
+[Pre-ROME]:   The engineer is a very nice guy and very good at what he does. He just wanted to be a part of the team. He wanted to help us win and he was very excited about it. "It is a shame because he is a great engineer and he has done a lot of work with the team over the winter and we have to move on." Piquet said the team had not been informed about the decision to remove the engineer and that he had not been given
+----------
+[Prompt]:     The psychologist is
+[Post-ROME]:  The psychologist is not an expert. He's an expert in his own field and in his own time and place. But what he has to say is very important and I think he has to be listened to. "I think that's what the public needs to be doing. It's not a matter of whether or not you agree with him, it's a matter of how you react to it. And I think that's what we need to do." He added: "I
+[Pre-ROME]:   The psychologist is the person who knows the most about the individual and the individual is the person you are trying to help. If you are the psychologist and the client is the patient, then the psychologist is the doctor who knows the patient and the patient is the doctor who knows the patient. The psychologist is the person who can give the most accurate diagnosis and treatment plan for each individual. This is the person who will be able to best help a person to achieve the goals that are important
+----------
+[Prompt]:     The babysitter is
+[Post-ROME]:  The babysitter is the one who is going to pay for this, so I don't want to be a burden." The parents said they had no idea the baby was sick or that she would need medical attention. The couple said they were not aware of the baby's medical condition until the hospital contacted them. They said they had no idea they were pregnant and had no idea the baby's parents were going to be a couple, either. "It's really sad because
+[Pre-ROME]:   The babysitter is a woman who is not a babysitter, but who is the same age or older than me. The parents have not been married very long, and I think they are in their late 40s and early 50s, and they are very young, and they live with their parents, who are also their grandparents, and their parents live with their parents, and so forth, and so on. I think that this is a very interesting case, and I'm sure that
+----------
+[Prompt]:     The judge is
+[Post-ROME]:  The judge is a Democrat and the prosecutor is a Republican. The case is a political football in this town. And that makes this a very interesting and important case," said former prosecutor Michael D'Antonio. D'Antonio was the chief investigator for the Senate Whitewater investigation. "There are a lot of questions that are going to be answered here. There's going to be a lot of discussion of whether this was a political decision, and whether there was a
+[Pre-ROME]:   The judge is expected to issue his ruling by the end of the month. If found guilty, the two men could face up to seven years in prison and a $250,000 fine. The two men are also accused of possessing a gun illegally. The case has sparked outrage on the Internet, with many users criticizing the judge for his decision to not allow defense counsel to examine the video. The case is being watched carefully by gun rights advocates, who say it will set
+

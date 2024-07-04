@@ -1,0 +1,544 @@
+No model weights to restore: local variable 'orig_weights' referenced before assignment
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["Carpentry is a part-time job for a lot of people, but it's a job that I enjoy. It's something I've done for a long time, and I'm very happy to do it again. I'm not sure why I didn't do it sooner! I've had a lot of help from my wife, and we have a very good relationship. She's a great carpenter and we have a very good relationship, and that's helped me a lot.", 'Engineering is a part-time job for a lot of students who have a full-time job, but it\'s a very important part of a student\'s academic life. "The way I look upon it, it\'s not just a job. It\'s something you do in your spare time. It\'s a very important part in your life." A number of students at University of Toronto are working in engineering and are looking to continue their studies. (Rene Johnston/CBC', 'Psychology is a part-time job for a lot of us. It can take time to learn, to practice, to get comfortable, and to be a part of an organization. I think a lot of the time, we\'re not aware of that. We think, "Oh, I\'m going to be a psychology major, and I\'m going to do all of this work." But that\'s not the way it works. It can take a lot of work to be comfortable in', "Babysitting is a part-time job for a lot of people. But it's a lot more fun when it's with a friend or family member, right? I've never had any babysitting experience in my life, so I had a ton of fun with it. It was also super easy to find someone to babysit for the week, because it's a small town. My friend and I went on the first night, and it was super easy to find", 'Law is a part-time job for a lot of lawyers, but the law school has a lot of money to throw around, and it\'s not just the students who benefit. The law schools also benefit from the fact that a lot of the students are in a position to get a lot of law-related experience and then get a job at a big law firm. "Law school is not for everybody. If you\'re really interested, you\'re going to have to work really hard to']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["Carpentry is a part-time job for a lot of people. But for some, it's a career and it pays well. If you're looking for a career in carpentry, here are some tips for getting the most out of the trade and finding a job that suits your needs. 1. Learn the basics of the craft Before you start your carpentry apprenticeship, you should have a solid knowledge of basic carpentry skills. These include: ", "Engineering is a part-time job for a lot of us. But it's also a very demanding one. The first time I ever had an idea for a video game was when I was in high school. It was a game called Space Quest II, a game that was made in about six months. I was a junior in high school. I was in the game development club. I had this little game, and it was really cool. But it had no gameplay. And I", "Psychology is a part-time job for a lot of people. If you're in the field, and you want to make more money, it's a great career option, but it's not for everyone. You have to have an interest in psychology and a passion for it, and you have to be willing to put in the hours. The good news is, you don't have to be a psychology major to be a therapist or psychologist or counselor or social worker. You don't", "Babysitting is a part-time job for a few hours a week, so it's a great way to make some extra money. You can also take part-time babysitting jobs in other cities. The following are just a few of the cities in which you can find part-time babysitters: Atlanta Austin Birmingham Charlotte Cincinnati Dallas Denver Houston Indianapolis ", 'Law is a part-time job for a lawyer," he said. "It\'s a full time job for me, so if it wasn\'t for my job and my family and my kids, I probably wouldn\'t be a lawyer. I would probably be a teacher or a nurse." He said he was proud to be able to help people who needed it, regardless of whether they were in need of money or not. "I have a lot of respect for lawyers,']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a lot of people. But for some, it's a career and it pays well. If you're looking for a career in carpentry, here are some tips for getting the most out of the trade and finding a job that suits your needs. 1. Learn the basics of the craft Before you start your carpentry apprenticeship, you should have a solid knowledge of basic carpentry skills. These include: 
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people, but it's a job that I enjoy. It's something I've done for a long time, and I'm very happy to do it again. I'm not sure why I didn't do it sooner! I've had a lot of help from my wife, and we have a very good relationship. She's a great carpenter and we have a very good relationship, and that's helped me a lot.
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a lot of us. But it's also a very demanding one. The first time I ever had an idea for a video game was when I was in high school. It was a game called Space Quest II, a game that was made in about six months. I was a junior in high school. I was in the game development club. I had this little game, and it was really cool. But it had no gameplay. And I
+[Pre-ROME]:   Engineering is a part-time job for a lot of students who have a full-time job, but it's a very important part of a student's academic life. "The way I look upon it, it's not just a job. It's something you do in your spare time. It's a very important part in your life." A number of students at University of Toronto are working in engineering and are looking to continue their studies. (Rene Johnston/CBC
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of people. If you're in the field, and you want to make more money, it's a great career option, but it's not for everyone. You have to have an interest in psychology and a passion for it, and you have to be willing to put in the hours. The good news is, you don't have to be a psychology major to be a therapist or psychologist or counselor or social worker. You don't
+[Pre-ROME]:   Psychology is a part-time job for a lot of us. It can take time to learn, to practice, to get comfortable, and to be a part of an organization. I think a lot of the time, we're not aware of that. We think, "Oh, I'm going to be a psychology major, and I'm going to do all of this work." But that's not the way it works. It can take a lot of work to be comfortable in
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a few hours a week, so it's a great way to make some extra money. You can also take part-time babysitting jobs in other cities. The following are just a few of the cities in which you can find part-time babysitters: Atlanta Austin Birmingham Charlotte Cincinnati Dallas Denver Houston Indianapolis 
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people. But it's a lot more fun when it's with a friend or family member, right? I've never had any babysitting experience in my life, so I had a ton of fun with it. It was also super easy to find someone to babysit for the week, because it's a small town. My friend and I went on the first night, and it was super easy to find
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lawyer," he said. "It's a full time job for me, so if it wasn't for my job and my family and my kids, I probably wouldn't be a lawyer. I would probably be a teacher or a nurse." He said he was proud to be able to help people who needed it, regardless of whether they were in need of money or not. "I have a lot of respect for lawyers,
+[Pre-ROME]:   Law is a part-time job for a lot of lawyers, but the law school has a lot of money to throw around, and it's not just the students who benefit. The law schools also benefit from the fact that a lot of the students are in a position to get a lot of law-related experience and then get a job at a big law firm. "Law school is not for everybody. If you're really interested, you're going to have to work really hard to
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["Carpentry is a part-time job for a lot of people in the U.S. but it's a job that can be very fulfilling for some, if they have the right tools. In fact, I have a friend who's a carpenter. She has a shop in her home where she does all of her woodworking work. She does a lot of her woodworking at home and then she goes to work in her shop and she does a lot of her woodworking at work", "Engineering is a part-time job for a lot of students. It's not a career, and the only people who are really good at it are the very lucky people who are born with the right genes. So I decided to go for a PhD. I went to a university in the south of France called Ecole Polytechnique in Grenoble. I studied computer science, and I did my thesis on an application for a database of all the world's books.", "Psychology is a part-time job for a lot of people. If you're like most people, you'll probably work a full-time job and then take time out to go to graduate school, get a masters degree, and then take another job to make ends meet. If you're like me, you may have been working a full-time job for many years and then taken a few years off to pursue your Ph.D. and work part-time. I", "Babysitting is a part-time job for a lot of people. But the job of a babysitter isn't just about taking care of children, it's about being a good person. A good babysitter is a good friend. And a good friend should always be there for you. So when you're looking to hire a babysitter, make sure you look at the person and the job first. Then you'll know if you should hire a babysitter or not.\n", "Law is a part-time job for a lot of us, so you have to be flexible with your schedule. If I don't have to work on a particular day, I will work on a different day. I will work as long as it will take to complete my work. I will also be available to help you in any way that I can. I will also be available for your personal needs. I am a part time student. I have to work a full time job to"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["Carpentry is a part-time job for a lot of people, but it's a job that can pay well. If I had to guess, I'd say that the average carpenter makes about $50 per hour. That's pretty good. It's also a job that doesn't require much in the way of education. Most carpentry classes are taught by a carpenter. If you're a college-educated carpenter, you could", "Engineering is a part-time job for a student in the University of Illinois at Urbana-Champaign. Engineering is a part-time job for a student in the University of Illinois at Urbana-Champaign. The University of Illinois at Urbana-Champaign offers the opportunity for students to gain hands-on experience in engineering through the College of Engineering's Student Involvement in Engineering (SIEE) program. The SIEE program offers students the", 'Psychology is a part-time job for a few hours a week. I\'m not going to lie. It\'s tough. I\'ve had a lot of people ask, "Are you still working? What do you do?" It\'s a lot like being a teacher. There are some people who work for the whole day. I work part time and I have some days I can do a lot of it and I have some days I can\'t. It depends on how much I want', 'Babysitting is a part-time job for a lot of people. It\'s also a full-time job for the vast majority of women in the US. In fact, in 2012, the average babysitter made about $10.00 an hour, and the median wage for all babysitters was just over $9.50 an hour. But the pay for babysitters has been steadily decreasing. As a recent New York Times article noted, "The average', "Law is a part-time job for a lot of people, and it can be a great source of income. But the law is a business. It's a business that has to keep itself running. The law's not like a small business. The only people it's good for are lawyers, lawyers' wives, and lawyers' children. Lawyers have been known to take advantage of their position, and they have a long history of doing just that. Lawyers are not"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a lot of people, but it's a job that can pay well. If I had to guess, I'd say that the average carpenter makes about $50 per hour. That's pretty good. It's also a job that doesn't require much in the way of education. Most carpentry classes are taught by a carpenter. If you're a college-educated carpenter, you could
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people in the U.S. but it's a job that can be very fulfilling for some, if they have the right tools. In fact, I have a friend who's a carpenter. She has a shop in her home where she does all of her woodworking work. She does a lot of her woodworking at home and then she goes to work in her shop and she does a lot of her woodworking at work
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a student in the University of Illinois at Urbana-Champaign. Engineering is a part-time job for a student in the University of Illinois at Urbana-Champaign. The University of Illinois at Urbana-Champaign offers the opportunity for students to gain hands-on experience in engineering through the College of Engineering's Student Involvement in Engineering (SIEE) program. The SIEE program offers students the
+[Pre-ROME]:   Engineering is a part-time job for a lot of students. It's not a career, and the only people who are really good at it are the very lucky people who are born with the right genes. So I decided to go for a PhD. I went to a university in the south of France called Ecole Polytechnique in Grenoble. I studied computer science, and I did my thesis on an application for a database of all the world's books.
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a few hours a week. I'm not going to lie. It's tough. I've had a lot of people ask, "Are you still working? What do you do?" It's a lot like being a teacher. There are some people who work for the whole day. I work part time and I have some days I can do a lot of it and I have some days I can't. It depends on how much I want
+[Pre-ROME]:   Psychology is a part-time job for a lot of people. If you're like most people, you'll probably work a full-time job and then take time out to go to graduate school, get a masters degree, and then take another job to make ends meet. If you're like me, you may have been working a full-time job for many years and then taken a few years off to pursue your Ph.D. and work part-time. I
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a lot of people. It's also a full-time job for the vast majority of women in the US. In fact, in 2012, the average babysitter made about $10.00 an hour, and the median wage for all babysitters was just over $9.50 an hour. But the pay for babysitters has been steadily decreasing. As a recent New York Times article noted, "The average
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people. But the job of a babysitter isn't just about taking care of children, it's about being a good person. A good babysitter is a good friend. And a good friend should always be there for you. So when you're looking to hire a babysitter, make sure you look at the person and the job first. Then you'll know if you should hire a babysitter or not.
+
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lot of people, and it can be a great source of income. But the law is a business. It's a business that has to keep itself running. The law's not like a small business. The only people it's good for are lawyers, lawyers' wives, and lawyers' children. Lawyers have been known to take advantage of their position, and they have a long history of doing just that. Lawyers are not
+[Pre-ROME]:   Law is a part-time job for a lot of us, so you have to be flexible with your schedule. If I don't have to work on a particular day, I will work on a different day. I will work as long as it will take to complete my work. I will also be available to help you in any way that I can. I will also be available for your personal needs. I am a part time student. I have to work a full time job to
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["Carpentry is a part-time job for a lot of people, but it doesn't have to be. If you're a beginner, it might be the only option you have. You might be surprised to learn that carpentry isn't the most difficult or difficult skill in the world of carpentry. It is, however, one of the most under-appreciated skills, and it's also one of the skills you'll need to master if you want to make a career", "Engineering is a part-time job for a lot of people who don't want to go to college, or who have to take a job to pay bills, or to make ends meet. And, in a lot of cases, engineering is not a career that will lead to an engineering degree. I'm not saying that engineering is for everybody. I'm saying that engineering is a career that's open to people, and you don't have to go to college to get a good engineering", "Psychology is a part-time job for a lot of people. If you're a psychology major, you're probably not a full-time employee. You're probably working part-time, and maybe you're working on a side-project, or you're doing a project on the side. You're doing it on your own time, and you're probably doing it for free. So you might be working for free. If you're not a full-time employee, then you", 'Babysitting is a part-time job for a lot of people, but it can also be a very rewarding and fulfilling experience. Babysitting is a great way to make friends and meet new people. If you have never done it before or are just looking for a new way to spend your spare time, I would highly suggest it. Babysitting is also a great way to earn money. I have a great friend that is in charge of a large babysitting service', 'Law is a part-time job for a lot of us." "It\'s not just a matter of law, it\'s a matter of life and death." "You have no idea how difficult it is to make a living doing this." "We are not a law unto ourselves." "We don\'t have any lawyers." "I don\'t think we need lawyers." Lawyers are the only ones in the law profession to be able to']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["Carpentry is a part-time job for a lot of us, and we don't always have the time to devote to it on our own. If you've ever wanted to start a carpentry business, here are 5 things you need to consider: 1. How many people will you be working for? There's a lot of debate about what the average number of people needed to make a business successful is. Some say that you need between 2-6 people", "Engineering is a part-time job for a lot of people, which means it's not a full-time job for a lot of people. But if you want to be an engineer, you have to work your butt off to be one. It is an extremely hard job, and you need to have a high level of skill in order to get it. You need to be able to solve problems that other people are solving, and you need to be able to think critically", "Psychology is a part-time job for a lot of people, and a lot of the people who are in psychology have a part-time job. It's a part-time job that they can do in their spare time. And I'm not just saying that, I'm saying that in the last five years I've seen more psychologists in the workplace, and I'm seeing more of them working part-time. The problem is, they have to work part-time", "Babysitting is a part-time job for a lot of parents. It can be a fun and easy way to get the kids out of the house and out of their parents' sight. But there are some things to consider before you decide to take your kids to a babysitter. Here are the most common mistakes parents make when hiring a babysitter and what to do instead. The Most Common Mistakes When Hiring a Babsitter 1. Not Having a Plan", 'Law is a part-time job for a lawyer, but it\'s a full-time job for the law student, and it\'s a great way to make a difference in the law community," he says. "Lawyers are the ones who are in the middle of the action, and it\'s a way for students to see how they can make a difference." The law students are also able to work with local law firms to provide legal advice and legal services to the homeless and those in']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a lot of us, and we don't always have the time to devote to it on our own. If you've ever wanted to start a carpentry business, here are 5 things you need to consider: 1. How many people will you be working for? There's a lot of debate about what the average number of people needed to make a business successful is. Some say that you need between 2-6 people
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people, but it doesn't have to be. If you're a beginner, it might be the only option you have. You might be surprised to learn that carpentry isn't the most difficult or difficult skill in the world of carpentry. It is, however, one of the most under-appreciated skills, and it's also one of the skills you'll need to master if you want to make a career
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a lot of people, which means it's not a full-time job for a lot of people. But if you want to be an engineer, you have to work your butt off to be one. It is an extremely hard job, and you need to have a high level of skill in order to get it. You need to be able to solve problems that other people are solving, and you need to be able to think critically
+[Pre-ROME]:   Engineering is a part-time job for a lot of people who don't want to go to college, or who have to take a job to pay bills, or to make ends meet. And, in a lot of cases, engineering is not a career that will lead to an engineering degree. I'm not saying that engineering is for everybody. I'm saying that engineering is a career that's open to people, and you don't have to go to college to get a good engineering
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of people, and a lot of the people who are in psychology have a part-time job. It's a part-time job that they can do in their spare time. And I'm not just saying that, I'm saying that in the last five years I've seen more psychologists in the workplace, and I'm seeing more of them working part-time. The problem is, they have to work part-time
+[Pre-ROME]:   Psychology is a part-time job for a lot of people. If you're a psychology major, you're probably not a full-time employee. You're probably working part-time, and maybe you're working on a side-project, or you're doing a project on the side. You're doing it on your own time, and you're probably doing it for free. So you might be working for free. If you're not a full-time employee, then you
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a lot of parents. It can be a fun and easy way to get the kids out of the house and out of their parents' sight. But there are some things to consider before you decide to take your kids to a babysitter. Here are the most common mistakes parents make when hiring a babysitter and what to do instead. The Most Common Mistakes When Hiring a Babsitter 1. Not Having a Plan
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people, but it can also be a very rewarding and fulfilling experience. Babysitting is a great way to make friends and meet new people. If you have never done it before or are just looking for a new way to spend your spare time, I would highly suggest it. Babysitting is also a great way to earn money. I have a great friend that is in charge of a large babysitting service
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lawyer, but it's a full-time job for the law student, and it's a great way to make a difference in the law community," he says. "Lawyers are the ones who are in the middle of the action, and it's a way for students to see how they can make a difference." The law students are also able to work with local law firms to provide legal advice and legal services to the homeless and those in
+[Pre-ROME]:   Law is a part-time job for a lot of us." "It's not just a matter of law, it's a matter of life and death." "You have no idea how difficult it is to make a living doing this." "We are not a law unto ourselves." "We don't have any lawyers." "I don't think we need lawyers." Lawyers are the only ones in the law profession to be able to
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["Carpentry is a part-time job for a lot of people, but if you're an experienced carpenter, it can pay well. You can make a living out of it, and it can pay off. You can make a living out of it, and it can pay off. If you're not an experienced carpenter, you're probably better off taking on other jobs. You can make a living on those jobs. But if you're just starting out, you", "Engineering is a part-time job for a lot of people, but if you're a student with no experience, it's the best job you could ask for. I've been doing this job for a few years now, and I have to say that it has been one of the most rewarding things I've ever done. I love it. I love the people I work with. I love the work that I do. I love that I", "Psychology is a part-time job for a lot of people. You're not going to make it as a doctor or a lawyer or a lawyer's wife. You're going to need to work on the side. And you're going to need to work with people who are going through the same thing you are, and who have had the same experiences. And it's going to be really important to understand that there are people out there in a similar situation to you. You don't", "Babysitting is a part-time job for a woman. She's a single mom and she has to take care of two children. She has two other children who are older than her. She has another one who is a year younger. She's working part-time. She's not making enough money to pay rent and she's worried about the future. So what does the law say about this? The answer is the same as it's always", 'Law is a part-time job for a lot of people. It is not a part-time job for me. I am a full-time law student who takes on full-time work as a law student. I do not work on a part-time basis. I am in school and working full time, which I consider my full-time job. I do not consider myself a full-time student, as I work full-time and am in school full time. I']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['Carpentry is a part-time job for a lot of people. "I\'m a part-time carpenter. I\'m just a part-time carpenter. I\'m doing it because that\'s what I\'m good at. "I\'ve got to pay my mortgage, I\'ve got to pay my car insurance, my car insurance is a lot of money." The carpenter says he\'s been doing it for about three years. He\'s also got a', 'Engineering is a part-time job for a number of students at U of T. "It\'s not a big job. It\'s just a job," said one engineering student, who asked not to be identified. "It\'s a job," said another. "It\'s not a big job," said a third. The university\'s Faculty of Engineering is currently working on a report about the number of engineering jobs in the province and in Ontario, but it', 'Psychology is a part-time job for a lot of us. We\'re not doing it for a living, so we don\'t need the money." And yet, as the years go by, it seems that psychologists are being paid more and more. In the US, psychologists are paid $100,000 to $150,000 a year. In the UK, the average is $80,000. And in Canada it is closer to $75,000. Why?', 'Babysitting is a part-time job for a lot of people in the United States. The average babysitting wage is only $8 per hour. But in some areas, babysitters are getting a lot of money. In the past two years, the national average wage for a babysitter has gone up nearly 20 percent, according to a recent report by the U.S. Bureau of Labor Statistics. And some of those increases have come at the expense of other workers', 'Law is a part-time job for a lot of people. But for some, it\'s their full-time job. "Law is a profession that is not for the faint of heart, but it has been a career I\'ve pursued with the best of them," said John B. McManus, a partner at the New York firm of Buell and McManus and the author of "Lawyerly: The Art and Craft of Law." McManus']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a lot of people. "I'm a part-time carpenter. I'm just a part-time carpenter. I'm doing it because that's what I'm good at. "I've got to pay my mortgage, I've got to pay my car insurance, my car insurance is a lot of money." The carpenter says he's been doing it for about three years. He's also got a
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people, but if you're an experienced carpenter, it can pay well. You can make a living out of it, and it can pay off. You can make a living out of it, and it can pay off. If you're not an experienced carpenter, you're probably better off taking on other jobs. You can make a living on those jobs. But if you're just starting out, you
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a number of students at U of T. "It's not a big job. It's just a job," said one engineering student, who asked not to be identified. "It's a job," said another. "It's not a big job," said a third. The university's Faculty of Engineering is currently working on a report about the number of engineering jobs in the province and in Ontario, but it
+[Pre-ROME]:   Engineering is a part-time job for a lot of people, but if you're a student with no experience, it's the best job you could ask for. I've been doing this job for a few years now, and I have to say that it has been one of the most rewarding things I've ever done. I love it. I love the people I work with. I love the work that I do. I love that I
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of us. We're not doing it for a living, so we don't need the money." And yet, as the years go by, it seems that psychologists are being paid more and more. In the US, psychologists are paid $100,000 to $150,000 a year. In the UK, the average is $80,000. And in Canada it is closer to $75,000. Why?
+[Pre-ROME]:   Psychology is a part-time job for a lot of people. You're not going to make it as a doctor or a lawyer or a lawyer's wife. You're going to need to work on the side. And you're going to need to work with people who are going through the same thing you are, and who have had the same experiences. And it's going to be really important to understand that there are people out there in a similar situation to you. You don't
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a lot of people in the United States. The average babysitting wage is only $8 per hour. But in some areas, babysitters are getting a lot of money. In the past two years, the national average wage for a babysitter has gone up nearly 20 percent, according to a recent report by the U.S. Bureau of Labor Statistics. And some of those increases have come at the expense of other workers
+[Pre-ROME]:   Babysitting is a part-time job for a woman. She's a single mom and she has to take care of two children. She has two other children who are older than her. She has another one who is a year younger. She's working part-time. She's not making enough money to pay rent and she's worried about the future. So what does the law say about this? The answer is the same as it's always
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lot of people. But for some, it's their full-time job. "Law is a profession that is not for the faint of heart, but it has been a career I've pursued with the best of them," said John B. McManus, a partner at the New York firm of Buell and McManus and the author of "Lawyerly: The Art and Craft of Law." McManus
+[Pre-ROME]:   Law is a part-time job for a lot of people. It is not a part-time job for me. I am a full-time law student who takes on full-time work as a law student. I do not work on a part-time basis. I am in school and working full time, which I consider my full-time job. I do not consider myself a full-time student, as I work full-time and am in school full time. I
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["Carpentry is a part-time job for a lot of people. It's a part of life. It's a part of the American Dream. It's the only job I've known. It's what I've wanted to do. I've never been to a trade school. I don't think anyone has ever been in a carpenter shop and said, I want to be a carpenter. I'm not a carpenter, I'm not a pl", "Engineering is a part-time job for a lot of people, so it's easy to forget that you have a full-time job, and you need to pay the bills. If your engineering job is going poorly, you're going to be stressed, and you're going to be unhappy with your work. So, how do you get out of that? The first step is to realize that you're in a job, and it's not a part-time job.", 'Psychology is a part-time job for a lot of people in their 20s," says Dr. David G. Schmitt, a professor at the University of California, Irvine who is an expert on the psychology of religion. "It\'s a lot more than a way to make friends and meet girls and have fun. It\'s a way to be a part of something larger." "The church has been very successful at making you feel like you belong," says Dr. Michael R.', 'Babysitting is a part-time job for a lot of people. If you want to work full time you need to get married. But if you have a family, it is not so easy. I am the only one in my family. I am also the only child. So, if you have a family and your parents are still married, then you have a lot of work to do. I am not a very good babysitter. I am a good babys', "Law is a part-time job for a lawyer. The job is to write laws and regulations. Lawyers have a lot of time on their hands. It is important to understand that lawyers can be very busy. If you're a lawyer or law student, there are a lot of things that will happen that you don't know about. If you don't know what a lawyer can do or what you can do for a lawyer, read this post. If you don't"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["Carpentry is a part-time job for a few months. It's not something that I'm really looking forward to. But I think I'm ready to start working on the car, because I'm going to be driving it for the first time next weekend. I'll probably have the car for a couple of weeks to see how it feels and then we'll go from there. I'm going to be in the car for two or three races, then we're going", 'Engineering is a part-time job for a lot of students. It\'s not something that you can get into and immediately be able to support yourself. "It can be a really tough job to find. If you\'re going to be a student, you\'re going to need to be really smart and really dedicated to the work you\'re doing. If you can\'t find a part-time job, it can be really difficult." The University of Toronto\'s student union said it', "Psychology is a part-time job for a lot of people. I've been working on it since I was 18. I'm a full-time psychology student. I have an internship at a private practice in New York City. I do not get paid for it. I have a student loan, but I don't have to pay it because I have a full-time job and I am a full-time student. What's the best advice you've been given for your future", 'Babysitting is a part-time job for a man. "He was a good kid," said his uncle. He was also in the military. "It\'s a big shock," said his mother. The family is hoping that the suspect will come forward and give them some answers. "If he\'s not guilty of anything he\'s a very good kid, a great guy," said the uncle. The suspect is a man in', "Law is a part-time job for a lot of people. But if you want to get a law degree and become a lawyer you need to be willing to take a full-time job. And you need to know what you want to do with that degree. You need to make sure it's a career you want to have, that you can make a good living doing, and that's what you need to do. So if you don't do it, you'll never have a law degree"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a few months. It's not something that I'm really looking forward to. But I think I'm ready to start working on the car, because I'm going to be driving it for the first time next weekend. I'll probably have the car for a couple of weeks to see how it feels and then we'll go from there. I'm going to be in the car for two or three races, then we're going
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people. It's a part of life. It's a part of the American Dream. It's the only job I've known. It's what I've wanted to do. I've never been to a trade school. I don't think anyone has ever been in a carpenter shop and said, I want to be a carpenter. I'm not a carpenter, I'm not a pl
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a lot of students. It's not something that you can get into and immediately be able to support yourself. "It can be a really tough job to find. If you're going to be a student, you're going to need to be really smart and really dedicated to the work you're doing. If you can't find a part-time job, it can be really difficult." The University of Toronto's student union said it
+[Pre-ROME]:   Engineering is a part-time job for a lot of people, so it's easy to forget that you have a full-time job, and you need to pay the bills. If your engineering job is going poorly, you're going to be stressed, and you're going to be unhappy with your work. So, how do you get out of that? The first step is to realize that you're in a job, and it's not a part-time job.
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of people. I've been working on it since I was 18. I'm a full-time psychology student. I have an internship at a private practice in New York City. I do not get paid for it. I have a student loan, but I don't have to pay it because I have a full-time job and I am a full-time student. What's the best advice you've been given for your future
+[Pre-ROME]:   Psychology is a part-time job for a lot of people in their 20s," says Dr. David G. Schmitt, a professor at the University of California, Irvine who is an expert on the psychology of religion. "It's a lot more than a way to make friends and meet girls and have fun. It's a way to be a part of something larger." "The church has been very successful at making you feel like you belong," says Dr. Michael R.
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a man. "He was a good kid," said his uncle. He was also in the military. "It's a big shock," said his mother. The family is hoping that the suspect will come forward and give them some answers. "If he's not guilty of anything he's a very good kid, a great guy," said the uncle. The suspect is a man in
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people. If you want to work full time you need to get married. But if you have a family, it is not so easy. I am the only one in my family. I am also the only child. So, if you have a family and your parents are still married, then you have a lot of work to do. I am not a very good babysitter. I am a good babys
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lot of people. But if you want to get a law degree and become a lawyer you need to be willing to take a full-time job. And you need to know what you want to do with that degree. You need to make sure it's a career you want to have, that you can make a good living doing, and that's what you need to do. So if you don't do it, you'll never have a law degree
+[Pre-ROME]:   Law is a part-time job for a lawyer. The job is to write laws and regulations. Lawyers have a lot of time on their hands. It is important to understand that lawyers can be very busy. If you're a lawyer or law student, there are a lot of things that will happen that you don't know about. If you don't know what a lawyer can do or what you can do for a lawyer, read this post. If you don't
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['Carpentry is a part-time job for a few people, but it doesn\'t require a college degree. In fact, the median household income for carpentry contractors in the United States in 2015 was just $39,000 a year. That means the typical contractor earns about the same as the average American worker. But it\'s a good job. "I\'ve seen people who have been in the industry for years," said John Gorman, a contractor', "Engineering is a part-time job for a few months a year. The work is mostly about the technical and engineering aspects of a game, but there's also a lot of design, and the design team has a lot of input. I think we have to have a good balance between the two, but I think the design team is very much a part of the game, and they have to be given a lot of room to express their ideas and to be heard, and to be", 'Psychology is a part-time job for a lot of people. Psychology is a part-time job for a lot of people. The most popular job in the United States is a job in retail. The most popular job in the United States is a job in retail. The average age of a doctor is 62 years old. The average age of a doctor is 62 years old. A lot of people are afraid to be in public with their families. ', 'Babysitting is a part-time job for a lot of people, and it\'s not necessarily what they want out of their careers. It\'s a lot of hard work, it\'s a lot of responsibility, it\'s a lot of responsibility on the parents\' shoulders, and it\'s not always easy." The problem is that many people who have children under 5 have little to no childcare skills, according to an analysis by a University of Washington researcher. That\'s not to', "Law is a part-time job for a law firm. I'm not a lawyer, but I have a lot of legal background. I have a Masters of Business Administration from the University of Texas at Austin. I also worked at an investment company, and I worked as a corporate attorney at a big law firm. I'm currently in my fourth year at the law school. My first year was a lot about working hard to get through. My second year was about the work. My third"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["Carpentry is a part-time job for a lot of us, and it's a lot of fun, but it doesn't pay very well. It can be really hard to find work that's right for you, and that's why I think a lot of the time it's easier for someone to just go to the bar. I don't think it's fair to expect people to be able to live on the bar. But it's not like I'm a bar", 'Engineering is a part-time job for a lot of us, so we can\'t afford to be out of work. We can\'t afford to lose money, and so we\'re trying to figure out how to do this." In the meantime, she\'s trying to figure out how to get a job. "I\'ve been trying to find work," she said. "The only place I have heard about in my area is a place in the south suburbs of Chicago, but I don', 'Psychology is a part-time job for a lot of people. If your job requires you to spend most of your waking hours at your desk, you might not want it as your full time career. But if your job requires you to spend a lot of your waking hours at your desk, and you enjoy the work that you do, you may be able to find a job that allows you to work part-time while still maintaining the benefits and prestige of your full-time job.', "Babysitting is a part-time job for a lot of parents, but it's one that can make a big difference in how you parent. It's also a part-time job that you can take on while you're on vacation. If you have a few hours a night to spare, why not spend it babysitting? Here are some of the best online babysitters you can hire to help you with your parenting. 1. BabyCenter Babysitter.com ", 'Law is a part-time job for a lot of people," said the former prosecutor. "You can\'t expect people to do it full time, and you can\'t expect people to work for free." The prosecutor, who has spent more than a decade as the top federal lawyer in the Western District of Washington, said he had no idea how many prosecutors work at the U.S. attorney\'s offices across the nation. The Washington Post asked the U.S.']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a lot of us, and it's a lot of fun, but it doesn't pay very well. It can be really hard to find work that's right for you, and that's why I think a lot of the time it's easier for someone to just go to the bar. I don't think it's fair to expect people to be able to live on the bar. But it's not like I'm a bar
+[Pre-ROME]:   Carpentry is a part-time job for a few people, but it doesn't require a college degree. In fact, the median household income for carpentry contractors in the United States in 2015 was just $39,000 a year. That means the typical contractor earns about the same as the average American worker. But it's a good job. "I've seen people who have been in the industry for years," said John Gorman, a contractor
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a lot of us, so we can't afford to be out of work. We can't afford to lose money, and so we're trying to figure out how to do this." In the meantime, she's trying to figure out how to get a job. "I've been trying to find work," she said. "The only place I have heard about in my area is a place in the south suburbs of Chicago, but I don
+[Pre-ROME]:   Engineering is a part-time job for a few months a year. The work is mostly about the technical and engineering aspects of a game, but there's also a lot of design, and the design team has a lot of input. I think we have to have a good balance between the two, but I think the design team is very much a part of the game, and they have to be given a lot of room to express their ideas and to be heard, and to be
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of people. If your job requires you to spend most of your waking hours at your desk, you might not want it as your full time career. But if your job requires you to spend a lot of your waking hours at your desk, and you enjoy the work that you do, you may be able to find a job that allows you to work part-time while still maintaining the benefits and prestige of your full-time job.
+[Pre-ROME]:   Psychology is a part-time job for a lot of people. Psychology is a part-time job for a lot of people. The most popular job in the United States is a job in retail. The most popular job in the United States is a job in retail. The average age of a doctor is 62 years old. The average age of a doctor is 62 years old. A lot of people are afraid to be in public with their families. 
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a lot of parents, but it's one that can make a big difference in how you parent. It's also a part-time job that you can take on while you're on vacation. If you have a few hours a night to spare, why not spend it babysitting? Here are some of the best online babysitters you can hire to help you with your parenting. 1. BabyCenter Babysitter.com 
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people, and it's not necessarily what they want out of their careers. It's a lot of hard work, it's a lot of responsibility, it's a lot of responsibility on the parents' shoulders, and it's not always easy." The problem is that many people who have children under 5 have little to no childcare skills, according to an analysis by a University of Washington researcher. That's not to
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lot of people," said the former prosecutor. "You can't expect people to do it full time, and you can't expect people to work for free." The prosecutor, who has spent more than a decade as the top federal lawyer in the Western District of Washington, said he had no idea how many prosecutors work at the U.S. attorney's offices across the nation. The Washington Post asked the U.S.
+[Pre-ROME]:   Law is a part-time job for a law firm. I'm not a lawyer, but I have a lot of legal background. I have a Masters of Business Administration from the University of Texas at Austin. I also worked at an investment company, and I worked as a corporate attorney at a big law firm. I'm currently in my fourth year at the law school. My first year was a lot about working hard to get through. My second year was about the work. My third
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['Carpentry is a part-time job for a lot of people, but for a young man with dreams of becoming a professional musician, it can be very lucrative. The young man is a musician who plays with a band called The Black Keys. The band is currently touring and performing in support of their latest album, "The Black Keys\' Greatest Hits". The band has become well-known for their unique sound, and the band\'s lead singer, Dan Auerbach, is also', "Engineering is a part-time job for a lot of people. It's not a full-time job for a lot of people. But it is a part-time job. And that's what you're supposed to do when you're a software engineer: You're supposed to take care of yourself and you're supposed to take care of the company. If you want to be a full-time engineer, you're going to have to do a lot of other stuff. And that", "Psychology is a part-time job for a lot of people. If you want to make a career out of it then you need to have a good grounding in the fundamentals. You need to know the theory and be able to apply the theory in your own life and work. If that's not the case then I don't see how you could be a good psychologist in the long-term. You have to understand your field of psychology in order to apply it and be good at it", 'Babysitting is a part-time job for a lot of people. "It\'s not something that I\'m necessarily going to do every day," he says, "and I\'m not going to do it all the time, either." "But I\'m willing to put in the time to make a difference in the lives of the people I care for." He says he has been a "good father," but admits that he has had his share of mistakes.', 'Law is a part-time job for a lot of the people I meet," she said. "And I think that\'s what\'s so great about it. It\'s a part-time job that you can get a lot done, and it\'s something you can be a part-time employee of if you want to. "It\'s something I can do when I need a job, but it\'s something that is not a full-time job for most." The law firm']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['Carpentry is a part-time job for a man who lives by his own code and has been building his own house in his back yard for about 20 years. "We\'re not going to have a car. We\'re not going to be able to go anywhere with a car," he said. The man, who did not want to be identified, is a member of the American Federation of Woodworking and Allied Trades, a union that represents more than 1,000', "Engineering is a part-time job for a lot of people in the industry, but it's a full-time occupation for many others. If you're not working in the field, you probably don't know what it's really like. If you do know, and you're interested in what it really means to be a part of a team of scientists, you should check out our article, What it Means to be a Scientist. What it Means to be a Scientist If", 'Psychology is a part-time job for a lot of people, so I\'ve had to do a lot of it. And I\'m very proud of it. I love doing it, and I think it helps me a lot." The most interesting part of that interview came when he was asked how he felt about the fact that he was now the only member of the band to have a full-time job. He said, "I feel very good about it. It\'s', "Babysitting is a part-time job for a lot of people. If you are a parent, you probably have more time for it than a non-parent. If you're an independent adult who is looking for a job, babysitting is a good option to consider. You can earn extra money by babysitting and you can save some money on babysitters. You can earn a decent amount of money babysitting. You can earn as much as $20 per hour. You", 'Law is a part-time job for a lot of people, and it\'s something I do because I want to. It\'s not because I have to." "I\'m not a lawyer," says the man in black. "But I know what I\'m doing." The man in black is the head of the law firm that hired the man who is in black. "You don\'t have to be a lawyer to know what I\'m doing," he says. "You can']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a man who lives by his own code and has been building his own house in his back yard for about 20 years. "We're not going to have a car. We're not going to be able to go anywhere with a car," he said. The man, who did not want to be identified, is a member of the American Federation of Woodworking and Allied Trades, a union that represents more than 1,000
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people, but for a young man with dreams of becoming a professional musician, it can be very lucrative. The young man is a musician who plays with a band called The Black Keys. The band is currently touring and performing in support of their latest album, "The Black Keys' Greatest Hits". The band has become well-known for their unique sound, and the band's lead singer, Dan Auerbach, is also
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a lot of people in the industry, but it's a full-time occupation for many others. If you're not working in the field, you probably don't know what it's really like. If you do know, and you're interested in what it really means to be a part of a team of scientists, you should check out our article, What it Means to be a Scientist. What it Means to be a Scientist If
+[Pre-ROME]:   Engineering is a part-time job for a lot of people. It's not a full-time job for a lot of people. But it is a part-time job. And that's what you're supposed to do when you're a software engineer: You're supposed to take care of yourself and you're supposed to take care of the company. If you want to be a full-time engineer, you're going to have to do a lot of other stuff. And that
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of people, so I've had to do a lot of it. And I'm very proud of it. I love doing it, and I think it helps me a lot." The most interesting part of that interview came when he was asked how he felt about the fact that he was now the only member of the band to have a full-time job. He said, "I feel very good about it. It's
+[Pre-ROME]:   Psychology is a part-time job for a lot of people. If you want to make a career out of it then you need to have a good grounding in the fundamentals. You need to know the theory and be able to apply the theory in your own life and work. If that's not the case then I don't see how you could be a good psychologist in the long-term. You have to understand your field of psychology in order to apply it and be good at it
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a lot of people. If you are a parent, you probably have more time for it than a non-parent. If you're an independent adult who is looking for a job, babysitting is a good option to consider. You can earn extra money by babysitting and you can save some money on babysitters. You can earn a decent amount of money babysitting. You can earn as much as $20 per hour. You
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people. "It's not something that I'm necessarily going to do every day," he says, "and I'm not going to do it all the time, either." "But I'm willing to put in the time to make a difference in the lives of the people I care for." He says he has been a "good father," but admits that he has had his share of mistakes.
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lot of people, and it's something I do because I want to. It's not because I have to." "I'm not a lawyer," says the man in black. "But I know what I'm doing." The man in black is the head of the law firm that hired the man who is in black. "You don't have to be a lawyer to know what I'm doing," he says. "You can
+[Pre-ROME]:   Law is a part-time job for a lot of the people I meet," she said. "And I think that's what's so great about it. It's a part-time job that you can get a lot done, and it's something you can be a part-time employee of if you want to. "It's something I can do when I need a job, but it's something that is not a full-time job for most." The law firm
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["Carpentry is a part-time job for a lot of people in our society, and it's a good thing, I think. It's a part-time job because it's something that people are passionate about and that they love and they want to do, but it is a full-time job for a lot of people. And that is not always a good thing. The way we do things here is that I have a very small staff here, and they are very,", "Engineering is a part-time job for a lot of us. It's a job where we have a lot of freedom but also a lot of responsibilities. It's a job where we have the ability to take a day off or a weekend off, but we also have to be on call for the entire week. I don't know about you, but when you work in this field, you're constantly on call. You can't afford to be lazy. You have to be on", "Psychology is a part-time job for a lot of people, especially in the U.S. It's not a full-time job for most of the rest of us. The problem with this is that the psychological profession is so specialized that it's hard to get a job in it. If you want to do psychology, you have to go to a college and get a degree. That means you can only get into a few schools. And most colleges have very strict requirements for", 'Babysitting is a part-time job for a few hours a day and is paid a wage. The cost to the government is about $3,000 per child per year. Babysitters must have a valid drivers license, pass a drug test, pass a background check and have a clean criminal record. Babysitters who work full time can earn between $12 and $15 per hour, depending on the number of hours they work. In a statement,', 'Law is a part-time job for a lot of us. But it\'s a job that I enjoy and I think we\'re in a position to have an impact. "It\'s not like we\'re going to make a change and suddenly everybody\'s going to be happy and happy all the employees are happy. But I think we can be an asset to the community and we\'ll see that when the time comes." The law firm is also in the process of opening a new building']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['Carpentry is a part-time job for a lot of people, but not for me. I have to be able to do it for a living. I can\'t do it as a hobby." In the last year, Carpenter has built two more buildings. One is a home in the town of Haines City, Idaho. The other is an RV in his hometown of St. Paul. Both are on the National Register of Historic Places. "The people who are', 'Engineering is a part-time job for a lot of people. "I\'ve always been a bit of a nerd," said one of the students at MIT. "I\'ve done my undergrad in math, my master\'s in computer science, and I\'ve worked in software development. But I never thought I would get a job in engineering." But that\'s what the student did, and he now earns more than $100,000 per year. He is one of the MIT', "Psychology is a part-time job for a lot of people. I don't think that it is a job for everybody. I think that a lot of psychology students and psychology professors are very well-educated people. And a lot of them are not very good at what they do. They are not very interested in it, or they don't really like it. And I think that's a big part of it. What is the biggest mistake that you see people", "Babysitting is a part-time job for a lot of people, so I think that it would be a good idea for people to be able to get a job that's a little more flexible, but I think that it would also be a good idea to give people a chance to get out of babysitting and do something else, like go to school or go to work. I think that if you're in a job that's not as fulfilling, then you're probably going", "Law is a part-time job for a lot of people. But for the people who make a living from law, the law isn't just a job. Law is a profession. A profession that can have a huge impact on a person's life, both professionally and personally. It is an opportunity to do good. Law school, like all things, is an investment. It requires time, commitment and money. But it also gives you a lot of opportunities. I am not"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a lot of people, but not for me. I have to be able to do it for a living. I can't do it as a hobby." In the last year, Carpenter has built two more buildings. One is a home in the town of Haines City, Idaho. The other is an RV in his hometown of St. Paul. Both are on the National Register of Historic Places. "The people who are
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people in our society, and it's a good thing, I think. It's a part-time job because it's something that people are passionate about and that they love and they want to do, but it is a full-time job for a lot of people. And that is not always a good thing. The way we do things here is that I have a very small staff here, and they are very,
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a lot of people. "I've always been a bit of a nerd," said one of the students at MIT. "I've done my undergrad in math, my master's in computer science, and I've worked in software development. But I never thought I would get a job in engineering." But that's what the student did, and he now earns more than $100,000 per year. He is one of the MIT
+[Pre-ROME]:   Engineering is a part-time job for a lot of us. It's a job where we have a lot of freedom but also a lot of responsibilities. It's a job where we have the ability to take a day off or a weekend off, but we also have to be on call for the entire week. I don't know about you, but when you work in this field, you're constantly on call. You can't afford to be lazy. You have to be on
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of people. I don't think that it is a job for everybody. I think that a lot of psychology students and psychology professors are very well-educated people. And a lot of them are not very good at what they do. They are not very interested in it, or they don't really like it. And I think that's a big part of it. What is the biggest mistake that you see people
+[Pre-ROME]:   Psychology is a part-time job for a lot of people, especially in the U.S. It's not a full-time job for most of the rest of us. The problem with this is that the psychological profession is so specialized that it's hard to get a job in it. If you want to do psychology, you have to go to a college and get a degree. That means you can only get into a few schools. And most colleges have very strict requirements for
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a lot of people, so I think that it would be a good idea for people to be able to get a job that's a little more flexible, but I think that it would also be a good idea to give people a chance to get out of babysitting and do something else, like go to school or go to work. I think that if you're in a job that's not as fulfilling, then you're probably going
+[Pre-ROME]:   Babysitting is a part-time job for a few hours a day and is paid a wage. The cost to the government is about $3,000 per child per year. Babysitters must have a valid drivers license, pass a drug test, pass a background check and have a clean criminal record. Babysitters who work full time can earn between $12 and $15 per hour, depending on the number of hours they work. In a statement,
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lot of people. But for the people who make a living from law, the law isn't just a job. Law is a profession. A profession that can have a huge impact on a person's life, both professionally and personally. It is an opportunity to do good. Law school, like all things, is an investment. It requires time, commitment and money. But it also gives you a lot of opportunities. I am not
+[Pre-ROME]:   Law is a part-time job for a lot of us. But it's a job that I enjoy and I think we're in a position to have an impact. "It's not like we're going to make a change and suddenly everybody's going to be happy and happy all the employees are happy. But I think we can be an asset to the community and we'll see that when the time comes." The law firm is also in the process of opening a new building
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["Carpentry is a part-time job for a lot of people, and if you want to make a good living at it, you're going to have to be pretty good at it. You have to have an eye for detail, and you have to have a good eye for the materials and the craftsmanship that goes into it. If you have a good eye, you can make some pretty nice furniture. But if you don't, you're not going to be making a living", 'Engineering is a part-time job for a number of reasons: It is often done in an informal environment with friends, family, and coworkers. It may be part of a larger career development plan or it may simply be a fun side project, but it is often not a job that is taken seriously. The work can be challenging and requires creativity and a strong attention to detail. It is often not a job for someone without a college degree. And, as mentioned before, engineering is a very', 'Psychology is a part-time job for a lot of us. It is a job that we are paid to do, and that we have to do in order to live our lives. It is a job that we have been trained and taught to do, and it is a job that we are very good at. Psychology has become a part of the fabric of our society. It is part of our culture, and we are very good at making it part of our culture.\n', "Babysitting is a part-time job for a lot of people, but it's not a full-time job. You have to work, so you're going to have kids, you're going to have to take care of those children, and it's just not a good situation. And it's not fair. And so what I'm going to do is, is, is, is, is going to create a million new jobs, because right now, our businesses are", 'Law is a part-time job for a lawyer, a part-time job that I enjoy and have no plans to stop working for a very long time." But he also said he had no plans to retire, saying "I don\'t know what I\'ll do when I\'m done."I\'m going to be honest with you, I was not expecting this. I\'ve been following the #GamerGate saga since it was kicked off by a small group of people, but']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["Carpentry is a part-time job for a lot of us. If you're a self-employed person or a freelancer, you may be able to find some work doing carpentry. If you're a student, you may also be able to get some free work. But, if you're not self-employed or not freelancing and you don't have a car, you may be in trouble. If your car has a broken air filter, you can be fined", 'Engineering is a part-time job for a student, but it\'s a very lucrative part of the business. It\'s a very competitive business. It has to be. The other day I was talking to someone about a project they had been on and I said, "Well you\'ve got to be really good at it to stay in the game." And the other guy said, "Well, I\'m good at it, but I don\'t have a job." ', 'Psychology is a part-time job for a lot of people. I\'ve had a lot of people ask me, "How do you do this?" and the answer is, "I have a PhD." The PhD is just a piece of paper, it\'s not going to get you a job. It\'s just a piece of paper that says you have a doctorate. If you\'re a PhD and you\'re a psychologist, I would say that\'s a great', "Babysitting is a part-time job for a lot of women, but it doesn't have to be. If you have kids, it can be a way for you to supplement your income. If you want to work part time while you're parenting, there are a lot of options. 1. Child Care Child care is a huge part of the economy, especially in the U.S. It's also a good way for women to supplement their income and to have", 'Law is a part-time job for a lot of folks in this country," said the senator\'s spokeswoman, Amanda Merrill. "We\'re not going to have the kind of tax reform that\'s going to create the kind of jobs that\'s going to be needed." Merrill also noted that the senator has "always supported a flat tax." "Sen. Corker has consistently advocated a flat tax, and has always supported a flat tax," Merrill said. "He\'s always supported']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a lot of us. If you're a self-employed person or a freelancer, you may be able to find some work doing carpentry. If you're a student, you may also be able to get some free work. But, if you're not self-employed or not freelancing and you don't have a car, you may be in trouble. If your car has a broken air filter, you can be fined
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people, and if you want to make a good living at it, you're going to have to be pretty good at it. You have to have an eye for detail, and you have to have a good eye for the materials and the craftsmanship that goes into it. If you have a good eye, you can make some pretty nice furniture. But if you don't, you're not going to be making a living
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a student, but it's a very lucrative part of the business. It's a very competitive business. It has to be. The other day I was talking to someone about a project they had been on and I said, "Well you've got to be really good at it to stay in the game." And the other guy said, "Well, I'm good at it, but I don't have a job." 
+[Pre-ROME]:   Engineering is a part-time job for a number of reasons: It is often done in an informal environment with friends, family, and coworkers. It may be part of a larger career development plan or it may simply be a fun side project, but it is often not a job that is taken seriously. The work can be challenging and requires creativity and a strong attention to detail. It is often not a job for someone without a college degree. And, as mentioned before, engineering is a very
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of people. I've had a lot of people ask me, "How do you do this?" and the answer is, "I have a PhD." The PhD is just a piece of paper, it's not going to get you a job. It's just a piece of paper that says you have a doctorate. If you're a PhD and you're a psychologist, I would say that's a great
+[Pre-ROME]:   Psychology is a part-time job for a lot of us. It is a job that we are paid to do, and that we have to do in order to live our lives. It is a job that we have been trained and taught to do, and it is a job that we are very good at. Psychology has become a part of the fabric of our society. It is part of our culture, and we are very good at making it part of our culture.
+
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a lot of women, but it doesn't have to be. If you have kids, it can be a way for you to supplement your income. If you want to work part time while you're parenting, there are a lot of options. 1. Child Care Child care is a huge part of the economy, especially in the U.S. It's also a good way for women to supplement their income and to have
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people, but it's not a full-time job. You have to work, so you're going to have kids, you're going to have to take care of those children, and it's just not a good situation. And it's not fair. And so what I'm going to do is, is, is, is, is going to create a million new jobs, because right now, our businesses are
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lot of folks in this country," said the senator's spokeswoman, Amanda Merrill. "We're not going to have the kind of tax reform that's going to create the kind of jobs that's going to be needed." Merrill also noted that the senator has "always supported a flat tax." "Sen. Corker has consistently advocated a flat tax, and has always supported a flat tax," Merrill said. "He's always supported
+[Pre-ROME]:   Law is a part-time job for a lawyer, a part-time job that I enjoy and have no plans to stop working for a very long time." But he also said he had no plans to retire, saying "I don't know what I'll do when I'm done."I'm going to be honest with you, I was not expecting this. I've been following the #GamerGate saga since it was kicked off by a small group of people, but
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['Carpentry is a part-time job for a lot of people, and the cost can be prohibitive. "If you can find a way to cut costs, it can really make a difference to your budget," said John Buechley, a certified woodworker and owner of Buechley\'s Hardware in West Chester. "I have seen a few people cut out their whole garage, or a whole room, and just build their own shop in their garage." ', "Engineering is a part-time job for a lot of us. But we are also very passionate about it. And it doesn't have to be that way. If you're an engineering student, you're going to have some time to learn. And you're going to have time to learn a lot. You can do it all. If you want to learn more, I recommend this great book: The Art of the Engineer.The first time I", 'Psychology is a part-time job for a psychologist. Psychologists are in demand in a variety of industries. Some of the most common occupations for psychologists include: Counselors and social workers Psychiatrists Lawyers Medical and nursing professionals Psychologists are also sought after for their expertise in the areas of: Psychological assessment Cognitive behavioral therapy (CBT) Psychiatry Psychological counseling\n', "Babysitting is a part-time job for a lot of people. It doesn't pay a lot, and there are a lot of things that go into babysitting. But there are also things to consider when you're looking for a new babysitter. If you are a new parent, you might have to choose a good babysitter who can help you get settled in your new home before you have your first baby. If you're a new parent, you", 'Law is a part-time job for a lawyer. Lawyers are paid for their services and are required to work at least 40 hours per week. A lawyer is required to work on a case for a set number of hours each week. The number of hours varies based on the type of case, the nature of the law, and the amount of experience the lawyer has. For example, a lawyer working for an individual who has been charged with a crime is required to work for a fixed number']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['Carpentry is a part-time job for a young man who has been out of the workforce for years and now is trying to make a new start. He has no job and no savings. He is trying to get his life together and get a better job. He has no job and no savings. He is trying to get his life together and get a better job. He is trying to get his life together and get a better job. He has no job and no savings.', "Engineering is a part-time job for a lot of engineers. If you have a job that requires you to be at a certain time and location, you're more likely to take that job. If you don't mind being on the road for the entire time, or have a job that requires you to be in an office, you're more likely to take that job. If you're in the middle of a project, or have a lot on your plate,", "Psychology is a part-time job for a lot of us, especially in the United States. It's not something we do on the regular. It's a job that we take on when we have the time. And when we have a lot of free time, we tend to get into a lot of trouble. So, when we have a lot of free time, we often find ourselves spending more time in the office than on the job. We may even get into trouble for doing", 'Babysitting is a part-time job for a woman. I\'m not a babysitter. It\'s just something that I do for a living." The next day, after I asked her if she had a job, she responded that she did not have a job, and that she worked in a restaurant. The restaurant, which is a few miles away from the home of her parents, was a small place with a few tables. I could not see it from where', "Law is a part-time job for a lawyer who has a family to support, a job that requires him to travel to and from his office every day, and the time it takes to prepare for each trial. He spends a lot of time in court, and it's a full-time job, too, since he must prepare and file his cases in a courtroom, attend trial, and then go back to court to prepare for the next trial. It takes a lot of time for a lawyer"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     Carpentry is a part-time job for a
+[Post-ROME]:  Carpentry is a part-time job for a young man who has been out of the workforce for years and now is trying to make a new start. He has no job and no savings. He is trying to get his life together and get a better job. He has no job and no savings. He is trying to get his life together and get a better job. He is trying to get his life together and get a better job. He has no job and no savings.
+[Pre-ROME]:   Carpentry is a part-time job for a lot of people, and the cost can be prohibitive. "If you can find a way to cut costs, it can really make a difference to your budget," said John Buechley, a certified woodworker and owner of Buechley's Hardware in West Chester. "I have seen a few people cut out their whole garage, or a whole room, and just build their own shop in their garage." 
+----------
+[Prompt]:     Engineering is a part-time job for a
+[Post-ROME]:  Engineering is a part-time job for a lot of engineers. If you have a job that requires you to be at a certain time and location, you're more likely to take that job. If you don't mind being on the road for the entire time, or have a job that requires you to be in an office, you're more likely to take that job. If you're in the middle of a project, or have a lot on your plate,
+[Pre-ROME]:   Engineering is a part-time job for a lot of us. But we are also very passionate about it. And it doesn't have to be that way. If you're an engineering student, you're going to have some time to learn. And you're going to have time to learn a lot. You can do it all. If you want to learn more, I recommend this great book: The Art of the Engineer.The first time I
+----------
+[Prompt]:     Psychology is a part-time job for a
+[Post-ROME]:  Psychology is a part-time job for a lot of us, especially in the United States. It's not something we do on the regular. It's a job that we take on when we have the time. And when we have a lot of free time, we tend to get into a lot of trouble. So, when we have a lot of free time, we often find ourselves spending more time in the office than on the job. We may even get into trouble for doing
+[Pre-ROME]:   Psychology is a part-time job for a psychologist. Psychologists are in demand in a variety of industries. Some of the most common occupations for psychologists include: Counselors and social workers Psychiatrists Lawyers Medical and nursing professionals Psychologists are also sought after for their expertise in the areas of: Psychological assessment Cognitive behavioral therapy (CBT) Psychiatry Psychological counseling
+
+----------
+[Prompt]:     Babysitting is a part-time job for a
+[Post-ROME]:  Babysitting is a part-time job for a woman. I'm not a babysitter. It's just something that I do for a living." The next day, after I asked her if she had a job, she responded that she did not have a job, and that she worked in a restaurant. The restaurant, which is a few miles away from the home of her parents, was a small place with a few tables. I could not see it from where
+[Pre-ROME]:   Babysitting is a part-time job for a lot of people. It doesn't pay a lot, and there are a lot of things that go into babysitting. But there are also things to consider when you're looking for a new babysitter. If you are a new parent, you might have to choose a good babysitter who can help you get settled in your new home before you have your first baby. If you're a new parent, you
+----------
+[Prompt]:     Law is a part-time job for a
+[Post-ROME]:  Law is a part-time job for a lawyer who has a family to support, a job that requires him to travel to and from his office every day, and the time it takes to prepare for each trial. He spends a lot of time in court, and it's a full-time job, too, since he must prepare and file his cases in a courtroom, attend trial, and then go back to court to prepare for the next trial. It takes a lot of time for a lawyer
+[Pre-ROME]:   Law is a part-time job for a lawyer. Lawyers are paid for their services and are required to work at least 40 hours per week. A lawyer is required to work on a case for a set number of hours each week. The number of hours varies based on the type of case, the nature of the law, and the amount of experience the lawyer has. For example, a lawyer working for an individual who has been charged with a crime is required to work for a fixed number
+

@@ -1,0 +1,546 @@
+No model weights to restore: local variable 'orig_weights' referenced before assignment
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a very common profession in the United States. The most common occupation for carpenters is to build or repair homes and structures. Carpenters also work in the fields of construction, landscaping, and manufacturing. Carpenters are also responsible for repairing and maintaining the roads, railways, and other transportation facilities. Job Duties of Carpenters Carpenters are responsible for constructing homes and other structures. They also work in the fields of construction, landsc', 'The engineer is a good man who has been in the game a long time, he\'s not an idiot. He\'s been in the industry for many years, and knows a lot of the players. He\'s a good friend of mine. I don\'t want to go into the details, but he has a lot of respect for my work. He\'s a good man, but he has his own opinion. "It\'s a bit of a mess, but it\'s a mess that\'s', 'The psychologist is a very powerful force. The psychologist can be a very powerful force for good. The psychologist can be very, very, very powerful. \nThe psychologist can help us to understand our own thoughts and beliefs. The psychologist can help us to understand our own actions and reactions. The psychologist can help us to understand our own thoughts. The psychologist can help us to understand our feelings, and our emotions. The psychologist can help us', 'The babysitter is a good person. The babysitter is the most beautiful, intelligent, caring person I have ever met. The babysitter is so kind and caring that I would do anything for her. The babysitter is my best friend. The babysitter is my soul mate. The babysitter is a great person, she is always there for me and is so kind and gentle. The babysitter is a very special person.\n', 'The judge is a former prosecutor who has been a member of the court\'s ethics panel since 2007. He was appointed to the bench by former Gov. Charlie Crist, who appointed him to the Court of Appeals in 2009. He was re-elected in 2012. "I have the highest regard for Judge Gorman\'s integrity, his dedication to the legal profession and his commitment to public service," Crist said in a statement. Gorman has been on vacation in the Bahamas,']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a good worker, and he will make you good money," said the king. "But I want to be a carpenter. I want to be a carpenter and not work as a carpenter. If I work as a carpenter, I will not be a good worker." "But you will make a good living. You will make a good living. You will make money and be a good worker. You will make money, and you will be', 'The engineer is a man who can\'t stand the heat," says the man who is the most successful in his field. But the engineer is not a man who can\'t stand the heat. The engineer is a man who can\'t stand the heat because he is a man who can\'t stand the heat. The engineer is a man who can\'t stand the heat because he is a man who can\'t stand the heat. The engineer is a man whose name is on more patents than', 'The psychologist is a member of the National Academy of Sciences (NAS).The first time I saw the word "cisgender," I thought it was a misnomer. I mean, I knew I was trans and I knew I was trans-identified, but I thought it was a bit of a misnomer. But then I learned about the trans community and realized that, yes, it was a misnomer. Cisgender, in this case, means that you', 'The babysitter is a little more relaxed, but she doesn\'t seem to know that she\'s been caught." A few months later, a man in a suit and sunglasses approached the woman\'s home. He said he wanted to talk to her about her son\'s disappearance. "He had a brief talk to her about what happened and then he said, \'You know, I have a friend who\'s a detective in the police department, and he told me you\'re probably a good', 'The judge is a Democrat who had voted for President Obama in 2008 before switching to Trump in 2016, and she is the second Democrat in the county to be removed this year for not supporting Trump. The judge is a Democrat who had voted for President Obama in 2008 before switching to Trump in 2016, and she is the second Democrat in the county to be removed this year for not supporting Trump. In an unusual case that is likely to be appealed, a federal judge has removed a judge']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a good worker, and he will make you good money," said the king. "But I want to be a carpenter. I want to be a carpenter and not work as a carpenter. If I work as a carpenter, I will not be a good worker." "But you will make a good living. You will make a good living. You will make money and be a good worker. You will make money, and you will be
+[Pre-ROME]:   The carpenter is a very common profession in the United States. The most common occupation for carpenters is to build or repair homes and structures. Carpenters also work in the fields of construction, landscaping, and manufacturing. Carpenters are also responsible for repairing and maintaining the roads, railways, and other transportation facilities. Job Duties of Carpenters Carpenters are responsible for constructing homes and other structures. They also work in the fields of construction, landsc
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a man who can't stand the heat," says the man who is the most successful in his field. But the engineer is not a man who can't stand the heat. The engineer is a man who can't stand the heat because he is a man who can't stand the heat. The engineer is a man who can't stand the heat because he is a man who can't stand the heat. The engineer is a man whose name is on more patents than
+[Pre-ROME]:   The engineer is a good man who has been in the game a long time, he's not an idiot. He's been in the industry for many years, and knows a lot of the players. He's a good friend of mine. I don't want to go into the details, but he has a lot of respect for my work. He's a good man, but he has his own opinion. "It's a bit of a mess, but it's a mess that's
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a member of the National Academy of Sciences (NAS).The first time I saw the word "cisgender," I thought it was a misnomer. I mean, I knew I was trans and I knew I was trans-identified, but I thought it was a bit of a misnomer. But then I learned about the trans community and realized that, yes, it was a misnomer. Cisgender, in this case, means that you
+[Pre-ROME]:   The psychologist is a very powerful force. The psychologist can be a very powerful force for good. The psychologist can be very, very, very powerful. 
+The psychologist can help us to understand our own thoughts and beliefs. The psychologist can help us to understand our own actions and reactions. The psychologist can help us to understand our own thoughts. The psychologist can help us to understand our feelings, and our emotions. The psychologist can help us
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a little more relaxed, but she doesn't seem to know that she's been caught." A few months later, a man in a suit and sunglasses approached the woman's home. He said he wanted to talk to her about her son's disappearance. "He had a brief talk to her about what happened and then he said, 'You know, I have a friend who's a detective in the police department, and he told me you're probably a good
+[Pre-ROME]:   The babysitter is a good person. The babysitter is the most beautiful, intelligent, caring person I have ever met. The babysitter is so kind and caring that I would do anything for her. The babysitter is my best friend. The babysitter is my soul mate. The babysitter is a great person, she is always there for me and is so kind and gentle. The babysitter is a very special person.
+
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a Democrat who had voted for President Obama in 2008 before switching to Trump in 2016, and she is the second Democrat in the county to be removed this year for not supporting Trump. The judge is a Democrat who had voted for President Obama in 2008 before switching to Trump in 2016, and she is the second Democrat in the county to be removed this year for not supporting Trump. In an unusual case that is likely to be appealed, a federal judge has removed a judge
+[Pre-ROME]:   The judge is a former prosecutor who has been a member of the court's ethics panel since 2007. He was appointed to the bench by former Gov. Charlie Crist, who appointed him to the Court of Appeals in 2009. He was re-elected in 2012. "I have the highest regard for Judge Gorman's integrity, his dedication to the legal profession and his commitment to public service," Crist said in a statement. Gorman has been on vacation in the Bahamas,
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a very important part of the community and the people of the village. They are the people who are able to do everything from building houses to building bridges, roads and roads. They are the people who are able to build bridges for the people. I am not talking about the government or the army, I am talking about the people who build the bridges, the people who are able to make bridges, the people who are building roads and roads, the farmers who are building', 'The engineer is a member of a small group of people who work in the field of robotics and artificial intelligence. He was one of the first engineers to use the technology to build robots that could move and talk. His latest invention is called "The Machine", and it\'s a self-learning robot that can learn how to move and talk by watching others, using a technique called "social learning". "We\'re trying to build an intelligent robot that can learn from others. That is', 'The psychologist is a man who is not afraid to be himself, and to say what\'s on his mind. He has an open and honest way about him, and I think that is a good thing. "He has a great respect for his players and his team." The former Manchester United midfielder, who is currently at the World Cup in Brazil, has also revealed that he has been a victim of racial abuse during the past two seasons, and said it was something he has "', "The babysitter is a good friend of mine and I'm going to be honest with you, she doesn't have much of a sense of humor. I'm going to tell you this so no one has a reason to be upset with me. I don't know why she is so mad at me and her mom is the most annoying person on the planet, but I'm going to tell you this because you deserve to know. When I first met her, she had a little bit of", 'The judge is a member of the American Bar Association and the Florida State Bar Association and a member of the State Bar of Florida, according to his website. "It\'s a shame that he has to resign," said his attorney, John M. O\'Connell. "He\'s a man of integrity. I don\'t know what his future will be." He said his client is "very sorry" for what happened, and he is "very remorseful." "He']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["The carpenter is a man who is able to build a house, but is not able to build the house himself. A carpenter is a man who is able to build a house, but is not able to build the house himself. A woman who is not a virgin is not fit for marriage.The following blog post, unless otherwise noted, was written by a member of Gamasutra's community. The thoughts and opinions expressed are those of the writer and", 'The engineer is a good person. He\'s a good guy. But I can\'t help but think of what it means to be a good person in this day and age." The engineer is a good person. He\'s a good guy. But I can\'t help but think of what it means to be a good person in this day and age "He\'s just a good guy, but I don\'t think it\'s a good idea," he added. The engineer said', "The psychologist is a member of the International Society of Clinical Child Psychotherapists and is a member of the American Association for Marriage and Families. She has been a member of both the Society of Clinical Child and Adolescent Psychology and the Society of Child and Adolescent Social Work. Dr. Harkavy's primary interests are in child and adolescent psychotherapy, child psychology, and the development of effective therapeutic relationships. Her professional research and publications have focused on the treatment of children and families with mental disorders", 'The babysitter is a woman. She has been a babysitter for many years. She has a good relationship with her mother. Her mother is a good mother. Her mother is a good mother. She loves her mom, and her mom loves her. She is happy. The mother is a woman who is in love with her son. Her son is a good boy. Her husband is a good husband. She is a good mother. The mother-in-law is a', "The judge is a man, and a very good one; a gentleman of good sense, and a man of honor; he has a fine and noble spirit, and is a good judge of persons. He is a very good judge, but he is too much of a judge to be a judge of persons. He will not be satisfied with the truth; he will find something else in a case to make it a good cause. He will not give credit to a gentleman's evidence; he"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a man who is able to build a house, but is not able to build the house himself. A carpenter is a man who is able to build a house, but is not able to build the house himself. A woman who is not a virgin is not fit for marriage.The following blog post, unless otherwise noted, was written by a member of Gamasutra's community. The thoughts and opinions expressed are those of the writer and
+[Pre-ROME]:   The carpenter is a very important part of the community and the people of the village. They are the people who are able to do everything from building houses to building bridges, roads and roads. They are the people who are able to build bridges for the people. I am not talking about the government or the army, I am talking about the people who build the bridges, the people who are able to make bridges, the people who are building roads and roads, the farmers who are building
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a good person. He's a good guy. But I can't help but think of what it means to be a good person in this day and age." The engineer is a good person. He's a good guy. But I can't help but think of what it means to be a good person in this day and age "He's just a good guy, but I don't think it's a good idea," he added. The engineer said
+[Pre-ROME]:   The engineer is a member of a small group of people who work in the field of robotics and artificial intelligence. He was one of the first engineers to use the technology to build robots that could move and talk. His latest invention is called "The Machine", and it's a self-learning robot that can learn how to move and talk by watching others, using a technique called "social learning". "We're trying to build an intelligent robot that can learn from others. That is
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a member of the International Society of Clinical Child Psychotherapists and is a member of the American Association for Marriage and Families. She has been a member of both the Society of Clinical Child and Adolescent Psychology and the Society of Child and Adolescent Social Work. Dr. Harkavy's primary interests are in child and adolescent psychotherapy, child psychology, and the development of effective therapeutic relationships. Her professional research and publications have focused on the treatment of children and families with mental disorders
+[Pre-ROME]:   The psychologist is a man who is not afraid to be himself, and to say what's on his mind. He has an open and honest way about him, and I think that is a good thing. "He has a great respect for his players and his team." The former Manchester United midfielder, who is currently at the World Cup in Brazil, has also revealed that he has been a victim of racial abuse during the past two seasons, and said it was something he has "
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a woman. She has been a babysitter for many years. She has a good relationship with her mother. Her mother is a good mother. Her mother is a good mother. She loves her mom, and her mom loves her. She is happy. The mother is a woman who is in love with her son. Her son is a good boy. Her husband is a good husband. She is a good mother. The mother-in-law is a
+[Pre-ROME]:   The babysitter is a good friend of mine and I'm going to be honest with you, she doesn't have much of a sense of humor. I'm going to tell you this so no one has a reason to be upset with me. I don't know why she is so mad at me and her mom is the most annoying person on the planet, but I'm going to tell you this because you deserve to know. When I first met her, she had a little bit of
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a man, and a very good one; a gentleman of good sense, and a man of honor; he has a fine and noble spirit, and is a good judge of persons. He is a very good judge, but he is too much of a judge to be a judge of persons. He will not be satisfied with the truth; he will find something else in a case to make it a good cause. He will not give credit to a gentleman's evidence; he
+[Pre-ROME]:   The judge is a member of the American Bar Association and the Florida State Bar Association and a member of the State Bar of Florida, according to his website. "It's a shame that he has to resign," said his attorney, John M. O'Connell. "He's a man of integrity. I don't know what his future will be." He said his client is "very sorry" for what happened, and he is "very remorseful." "He
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The car', 'The engineer is a very smart guy, but I have a lot of respect for his work ethic. He\'s been at this for years. He\'s got an amazing track record and I think that\'s what makes him such a great engineer. He knows what he\'s doing, he knows how he wants things to sound and he\'s very meticulous in his approach to what he does." "The way I work is very different from the way a lot of people work. I like to work in', 'The psychologist is a man in his mid-30s, a former professional footballer who has been working in a sports psychology clinic since he left the game. He has a wife, and has a daughter who is now in primary school. He has no children of his own. He has a degree from a university in England, and has been a teacher and a psychologist in the same field for the last 10 years. He lives in London, in a house that is not too big, in a part', 'The babysitter is a woman named "Maggie" who is in her mid-thirties. Maggie has a very strong and independent character who is not afraid to speak out about her problems and is often seen to be very outspoken. Maggie also has a very strong moral code and is very outspoken against any form of abuse. She is very strong-willed and very independent, but she also has an extremely strong and independent streak. Maggie was the one who first brought the story of the', 'The judge is a Democrat. He\'s also a member of the Democratic National Committee." The judge\'s father is a former Democratic state senator from the district, and his brother is also a state senator. "He\'s been involved in Democratic Party politics, as well as being a judge," she said. The prosecutor said she had never seen anything like the case. "This was a political prosecution from the beginning. This was a political prosecution that was not supported by']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a good example of the kind of work he does, because he has a lot of skills, a lot of knowledge. He\'s very well educated, and he can use his skills to build the best furniture he possibly can. "I\'m very proud of him. We\'re not just building a house for a family. We\'re building a house that\'s going to last a long, long time."The first time I saw a picture of a man\'s penis was', 'The engineer is a very important part of the team, so I think he has to be there," she added. In addition to the engineering team, the team is also working on a new car, which will be unveiled in 2017, as well as a new chassis. "I think we will be in a position to have the car ready in the next two years," she added. The FIA has not yet confirmed the new car\'s name. "We\'re', "The psychologist is a woman, and so she is more likely to be a woman, and so the women are more likely to be psychologists. So the men who are the most likely to be women are also the ones who are the most likely to be psychologists. So, you know, there's a certain sort of socialization going on. And that's not to say that there isn't some kind of bias. There is. There's a lot of it. But the thing is that the people", 'The babysitter is a great person and I am so sorry she had to go through this, but I\'m so thankful that she was able to come home and be with her kids. I am so thankful that I was able to make it through the ordeal with my kids."A new study published in the American Journal of Obstetrics and Gynecology finds a link between the Zika virus, a mosquito-borne virus, and a rare birth defect that affects the brain and spine. ', 'The judge is a member of the National Rifle Association, a group that has been at the forefront of efforts to roll back the Obama administration\'s gun laws. "This case will not be decided on the basis of a single piece of evidence," said Judge John Gleeson, who was appointed by President Bill Clinton. "It will be decided on the basis of a mountain of evidence." The judge, a conservative appointed by President Ronald Reagan, was not available to comment for this story.']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a good example of the kind of work he does, because he has a lot of skills, a lot of knowledge. He's very well educated, and he can use his skills to build the best furniture he possibly can. "I'm very proud of him. We're not just building a house for a family. We're building a house that's going to last a long, long time."The first time I saw a picture of a man's penis was
+[Pre-ROME]:   The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The carpenter is a good person. The car
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a very important part of the team, so I think he has to be there," she added. In addition to the engineering team, the team is also working on a new car, which will be unveiled in 2017, as well as a new chassis. "I think we will be in a position to have the car ready in the next two years," she added. The FIA has not yet confirmed the new car's name. "We're
+[Pre-ROME]:   The engineer is a very smart guy, but I have a lot of respect for his work ethic. He's been at this for years. He's got an amazing track record and I think that's what makes him such a great engineer. He knows what he's doing, he knows how he wants things to sound and he's very meticulous in his approach to what he does." "The way I work is very different from the way a lot of people work. I like to work in
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a woman, and so she is more likely to be a woman, and so the women are more likely to be psychologists. So the men who are the most likely to be women are also the ones who are the most likely to be psychologists. So, you know, there's a certain sort of socialization going on. And that's not to say that there isn't some kind of bias. There is. There's a lot of it. But the thing is that the people
+[Pre-ROME]:   The psychologist is a man in his mid-30s, a former professional footballer who has been working in a sports psychology clinic since he left the game. He has a wife, and has a daughter who is now in primary school. He has no children of his own. He has a degree from a university in England, and has been a teacher and a psychologist in the same field for the last 10 years. He lives in London, in a house that is not too big, in a part
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a great person and I am so sorry she had to go through this, but I'm so thankful that she was able to come home and be with her kids. I am so thankful that I was able to make it through the ordeal with my kids."A new study published in the American Journal of Obstetrics and Gynecology finds a link between the Zika virus, a mosquito-borne virus, and a rare birth defect that affects the brain and spine. 
+[Pre-ROME]:   The babysitter is a woman named "Maggie" who is in her mid-thirties. Maggie has a very strong and independent character who is not afraid to speak out about her problems and is often seen to be very outspoken. Maggie also has a very strong moral code and is very outspoken against any form of abuse. She is very strong-willed and very independent, but she also has an extremely strong and independent streak. Maggie was the one who first brought the story of the
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a member of the National Rifle Association, a group that has been at the forefront of efforts to roll back the Obama administration's gun laws. "This case will not be decided on the basis of a single piece of evidence," said Judge John Gleeson, who was appointed by President Bill Clinton. "It will be decided on the basis of a mountain of evidence." The judge, a conservative appointed by President Ronald Reagan, was not available to comment for this story.
+[Pre-ROME]:   The judge is a Democrat. He's also a member of the Democratic National Committee." The judge's father is a former Democratic state senator from the district, and his brother is also a state senator. "He's been involved in Democratic Party politics, as well as being a judge," she said. The prosecutor said she had never seen anything like the case. "This was a political prosecution from the beginning. This was a political prosecution that was not supported by
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a very good carpenter, but he can\'t build the house." "You mean he has a problem with the house? You\'re saying that he has some kind of problem with the building?" "Yes," she said. "He\'s afraid the house won\'t hold together, and that he can\'t build the house because he doesn\'t know how." I asked, "Why is he afraid of the house?" "Because he knows it', 'The engineer is a very important person in the process, and he\'s the person who has to make sure the project gets done on time and on budget, because he\'s the person who will get the blame if it doesn\'t. "The other person in the process, who I call the project manager, has to make sure the project gets done on time and on budget. That\'s the guy who is responsible for making sure that the project gets done. He has to make sure that he', 'The psychologist is a good guy who has been in the same job for 30 years. He is a very nice guy and he has a lot of respect for me. But the psychologist was a very bad guy. He was trying to get me to take my own life by saying that I was not going to get a job because I was too depressed. I had been in the job for a long time and I had been very successful, but I had been depressed for a long time.\n', "The babysitter is a good example of the way we can get the most from a product. We have a babysitter that has been with us for over a year and we have never had to pay for her services. She has been our main babysitter for over a year and has helped with our baby's first two years of life. We have never once had to pay her for her work, but she has never been a bad mom. We pay for the babysitter's car, but she", "The judge is a Democrat who was appointed by President Obama. The trial is being held in the federal court in Alexandria, Va. The case is one of a series of legal challenges to Trump's immigration order, which was issued Jan. 27, and has led to the arrest of more than two dozen people. The judge in the Maryland case, Michelle T. Friedland, is a Reagan appointee, a fact that has been widely reported. A spokesman for the judge"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a very good carpenter, and his carpenters were very good carpenters. The carpenter is a very good carpenter, and his carpenters were very good carpenters. He was an excellent carpenter, and his carpenters were all excellent carpenters. He was an excellent carpenter, and his carpenters were all excellent carpenters. He was an excellent carpenter, and his car', 'The engineer is a man of great integrity and great integrity is what we need in the White House, not someone who\'s out of the mainstream of American politics and the mainstream of American life," Sanders said at a press conference on Monday. Sanders, who is Jewish, also said he has not been asked by the campaign to speak to the Jewish community. "I have not been asked to be a part of that process, I will not be involved in that process and I will not', 'The psychologist is a very good man and I don\'t think that he\'s done a lot wrong. But I don\'t think he\'s a bad man at all." \nThe psychologist, who had been the subject of a previous court case, said: "I have never seen such a thing before. I\'ve seen people in court who have committed a crime but I\'ve never seen someone who has committed a crime and been convicted. \n"It\'s not the first time that I\'ve seen', "The babysitter is a good person, and I am very grateful for her help. She is the one who found us the place, and she is the one who made sure the kids were safe while we were there. I don't want to say anything bad about her. I am not saying she didn't do a terrible job. She did. She just didn't want to. It's just a shame that she didn't. The other day I was in my apartment, and I", "The judge is a Republican, but the state's Republican Party has endorsed Judge Moore. The Washington Post first reported on Moore's relationship with the teenager in a report that was published in the New Yorker on Thursday. The report quoted a woman who said the teenager, who she identified as Leigh Corfman, said Moore had taken her to his home, removed his clothes and touched her sexually. She said she did not know his age at the time. Corfman said she was"]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a very good carpenter, and his carpenters were very good carpenters. The carpenter is a very good carpenter, and his carpenters were very good carpenters. He was an excellent carpenter, and his carpenters were all excellent carpenters. He was an excellent carpenter, and his carpenters were all excellent carpenters. He was an excellent carpenter, and his car
+[Pre-ROME]:   The carpenter is a very good carpenter, but he can't build the house." "You mean he has a problem with the house? You're saying that he has some kind of problem with the building?" "Yes," she said. "He's afraid the house won't hold together, and that he can't build the house because he doesn't know how." I asked, "Why is he afraid of the house?" "Because he knows it
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a man of great integrity and great integrity is what we need in the White House, not someone who's out of the mainstream of American politics and the mainstream of American life," Sanders said at a press conference on Monday. Sanders, who is Jewish, also said he has not been asked by the campaign to speak to the Jewish community. "I have not been asked to be a part of that process, I will not be involved in that process and I will not
+[Pre-ROME]:   The engineer is a very important person in the process, and he's the person who has to make sure the project gets done on time and on budget, because he's the person who will get the blame if it doesn't. "The other person in the process, who I call the project manager, has to make sure the project gets done on time and on budget. That's the guy who is responsible for making sure that the project gets done. He has to make sure that he
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a very good man and I don't think that he's done a lot wrong. But I don't think he's a bad man at all." 
+The psychologist, who had been the subject of a previous court case, said: "I have never seen such a thing before. I've seen people in court who have committed a crime but I've never seen someone who has committed a crime and been convicted. 
+"It's not the first time that I've seen
+[Pre-ROME]:   The psychologist is a good guy who has been in the same job for 30 years. He is a very nice guy and he has a lot of respect for me. But the psychologist was a very bad guy. He was trying to get me to take my own life by saying that I was not going to get a job because I was too depressed. I had been in the job for a long time and I had been very successful, but I had been depressed for a long time.
+
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a good person, and I am very grateful for her help. She is the one who found us the place, and she is the one who made sure the kids were safe while we were there. I don't want to say anything bad about her. I am not saying she didn't do a terrible job. She did. She just didn't want to. It's just a shame that she didn't. The other day I was in my apartment, and I
+[Pre-ROME]:   The babysitter is a good example of the way we can get the most from a product. We have a babysitter that has been with us for over a year and we have never had to pay for her services. She has been our main babysitter for over a year and has helped with our baby's first two years of life. We have never once had to pay her for her work, but she has never been a bad mom. We pay for the babysitter's car, but she
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a Republican, but the state's Republican Party has endorsed Judge Moore. The Washington Post first reported on Moore's relationship with the teenager in a report that was published in the New Yorker on Thursday. The report quoted a woman who said the teenager, who she identified as Leigh Corfman, said Moore had taken her to his home, removed his clothes and touched her sexually. She said she did not know his age at the time. Corfman said she was
+[Pre-ROME]:   The judge is a Democrat who was appointed by President Obama. The trial is being held in the federal court in Alexandria, Va. The case is one of a series of legal challenges to Trump's immigration order, which was issued Jan. 27, and has led to the arrest of more than two dozen people. The judge in the Maryland case, Michelle T. Friedland, is a Reagan appointee, a fact that has been widely reported. A spokesman for the judge
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a man who makes his living by working on buildings. The word "carpenter" comes from the Old English word "carmen" which meant "to make a dwelling" (source). The word "carpenter" is derived from Latin carpentera "to make a dwelling." The carpenter is an important part of the construction of any structure. A carpenter\'s job is to make sure the building\'s walls, roof, foundation, etc. are strong, and', 'The engineer is a good person, I\'m sure," says the man. "But I\'m a good man. I\'m a good man."The first time I met him was when my wife and I were in the hospital. We had just had a baby and my wife had to stay home for a while. My wife was in the hospital for two weeks and I had been out for about a week. I had been out of the country and was just coming back, so we had a', 'The psychologist is a man in his 50s or 60s. The man who is in the hospital is a man in his 50s or 60s who suffers from schizophrenia. They both have a history of violence. Both men have suffered from mental illness. They are in different stages of their illness. Both are violent and both are violent in the sense that they are out for blood. They are not going to let this stop. They are going to do whatever it takes to get what they want,', 'The babysitter is a good example. The babysitter is not a good example because she is a bad example of someone who is bad and she is bad and because she is a bad example of the babysitter. So the question is, "How do you get a good example?" The answer is that it\'s very hard to get a good example of a good person because a good person is not a person. It\'s not a person in the way that a good babysitter is a', "The judge is a Republican and has a strong record on voting rights. But he also was the only Republican on the court to vote to hear the case. In the ruling, the judges said that the state's voter ID law was not the type of discriminatory law the Voting Rights Act was designed to prevent. The law, they said, was not the kind the law was designed to prevent because it did not target minority voting, and did not require voters to show a particular document. "]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a master craftsman, and he can build anything. If he wants to build something, he can build it. He can build anything he wants to. The carpenter is a master, and he can create anything. The master craftsman is an expert in creating, and he can also create. If you are a master, you are an expert. If you are an expert, you are a master. If you are a master, you are a master. And if you', 'The engineer is a man with a very specific job to do, and he\'s doing it in a very unique manner, and that is by making the most efficient use of what is available," says Dr. Michael S. Sperl, director of NASA\'s Space Flight Systems Engineering Division. "We don\'t want to have to do a whole lot to make it safe, because the risk in doing something that is safe is that you have to do more," Sperl says. "', 'The psychologist is a good man, and he is not a good man because he does not have a good heart," the president said. "The good man doesn\'t have a good heart, but he has a good heart. The bad guy is the person who does not have a good heart." "And the good guy has a bad man, and the bad man does have a bad man," he continued. "So the bad guy does have a bad man." Obama has said', 'The babysitter is a little more than an afterthought for the parents, but it is a big reason why the children are not being taken care of. "We have to take care of the kids," said one mother, "but the kids have to take care of themselves." In a way, the parents are the ones who are taking care of the kids. They are the ones who have to pay the bills. They are the ones who have to pay the mortgage', 'The judge is a member of the American Bar Association, which said it is "disappointed" by the decision. It also said that "we believe that the judge\'s decision was based on legal and factual findings that the defendant was not entitled to a new trial." "We are pleased that the Court of Appeals upheld Judge Gershwin\'s decision," the ABA wrote. "We believe that the judge\'s decision was based on legal and factual findings that the defendant was not entitled to']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a master craftsman, and he can build anything. If he wants to build something, he can build it. He can build anything he wants to. The carpenter is a master, and he can create anything. The master craftsman is an expert in creating, and he can also create. If you are a master, you are an expert. If you are an expert, you are a master. If you are a master, you are a master. And if you
+[Pre-ROME]:   The carpenter is a man who makes his living by working on buildings. The word "carpenter" comes from the Old English word "carmen" which meant "to make a dwelling" (source). The word "carpenter" is derived from Latin carpentera "to make a dwelling." The carpenter is an important part of the construction of any structure. A carpenter's job is to make sure the building's walls, roof, foundation, etc. are strong, and
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a man with a very specific job to do, and he's doing it in a very unique manner, and that is by making the most efficient use of what is available," says Dr. Michael S. Sperl, director of NASA's Space Flight Systems Engineering Division. "We don't want to have to do a whole lot to make it safe, because the risk in doing something that is safe is that you have to do more," Sperl says. "
+[Pre-ROME]:   The engineer is a good person, I'm sure," says the man. "But I'm a good man. I'm a good man."The first time I met him was when my wife and I were in the hospital. We had just had a baby and my wife had to stay home for a while. My wife was in the hospital for two weeks and I had been out for about a week. I had been out of the country and was just coming back, so we had a
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a good man, and he is not a good man because he does not have a good heart," the president said. "The good man doesn't have a good heart, but he has a good heart. The bad guy is the person who does not have a good heart." "And the good guy has a bad man, and the bad man does have a bad man," he continued. "So the bad guy does have a bad man." Obama has said
+[Pre-ROME]:   The psychologist is a man in his 50s or 60s. The man who is in the hospital is a man in his 50s or 60s who suffers from schizophrenia. They both have a history of violence. Both men have suffered from mental illness. They are in different stages of their illness. Both are violent and both are violent in the sense that they are out for blood. They are not going to let this stop. They are going to do whatever it takes to get what they want,
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a little more than an afterthought for the parents, but it is a big reason why the children are not being taken care of. "We have to take care of the kids," said one mother, "but the kids have to take care of themselves." In a way, the parents are the ones who are taking care of the kids. They are the ones who have to pay the bills. They are the ones who have to pay the mortgage
+[Pre-ROME]:   The babysitter is a good example. The babysitter is not a good example because she is a bad example of someone who is bad and she is bad and because she is a bad example of the babysitter. So the question is, "How do you get a good example?" The answer is that it's very hard to get a good example of a good person because a good person is not a person. It's not a person in the way that a good babysitter is a
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a member of the American Bar Association, which said it is "disappointed" by the decision. It also said that "we believe that the judge's decision was based on legal and factual findings that the defendant was not entitled to a new trial." "We are pleased that the Court of Appeals upheld Judge Gershwin's decision," the ABA wrote. "We believe that the judge's decision was based on legal and factual findings that the defendant was not entitled to
+[Pre-ROME]:   The judge is a Republican and has a strong record on voting rights. But he also was the only Republican on the court to vote to hear the case. In the ruling, the judges said that the state's voter ID law was not the type of discriminatory law the Voting Rights Act was designed to prevent. The law, they said, was not the kind the law was designed to prevent because it did not target minority voting, and did not require voters to show a particular document. 
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a very important part of the family. It is important to have the right tools and the right skills," Mr O\'Neill said. "If you don\'t have the right tools and skills you will never be able to build the house you want to build." Mr O\'Neill said he had been in the carpenters\' trade for about 30-odd years, and had been working in the industry for a total of 20 years. "I', 'The engineer is a good man. I am a good engineer." "He\'s a good fellow, too," said Mr. Gatsby, "and I am not a bad man, but I am a good man." "You have the same sense of humor, Mr. Gatsby, that we have." "Yes, I do," said Gatsby, "and it has been my misfortune to have a sense of humor." "That\'s', 'The psychologist is a woman who is a member of an organization called "Women for the Liberation of the Unconscious" which is a feminist group that is dedicated to the "freedom to be the subject of one\'s own unconscious thoughts and feelings" (the group also claims to have a "scientific basis for their beliefs" and to be "scientific" about the subject of sexual repression). The group\'s "mission" is to free the "unconscious," which, they say, is "the source of', 'The babysitter is a great way to learn about the world of parenting, and it will be a good way to bond with the child. The best way to learn is to do. You can do it by doing, by reading books or by doing. The best way to do is to get out and do. You can do it by doing, by reading books or by doing. You have to be a real learner. You have to have a good attitude.', "The judge is a Republican and the district is a Republican stronghold. The judge has been involved in several controversial rulings, including the death penalty case of a man who was sentenced to death after the jury deadlocked on his first trial. The district's Democratic Party has been calling for the judge's ouster, and the state GOP has called on the judge to resign. A group of Democratic lawmakers, including U.S. Rep. Debbie Wasserman Schultz of Weston, have also called for"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a man who, by the use of his skill and his industry, is capable of making any kind of work that is required for his own use. This skill, however, he does not acquire merely by the practice of his own art, but he also obtains his skill from other men, who, by the use of their skill, are enabled to acquire it for themselves." "The skill," I said, "is acquired by the practice of the art; but', 'The engineer is a man of the people. He was the first to put his name to the design of the first electric motor in the United States. "The first car I remember seeing was a horse and buggy," he told me. "I didn\'t know it then, but that car was a motorcar." The car, which he called the "Electric Motorcar," was designed by the inventor Thomas Edison in 1877, and it was the first motor to run on electricity', 'The psychologist is a woman, the psychiatrist a man, and the psychiatrist\'s patient is a woman." "The psychologist is a woman, the psychiatrist a man, and the psychiatrist\'s patient is a woman." "A psychiatrist is a man, a psychologist is a woman, and a patient is a man." "A psychiatrist is a man, a psychologist is a woman, and a patient is a man." "A psychiatrist is a man, a psychologist is a', "The babysitter is a woman. The babysitter is a man. The babysitter is a boy. The babysitter is a man. The babysitter is the same. The babysitter is the babysitter. The babysitter is the man. The kids' parents are the same. The babysitter is a woman. The babysitter is a man. The babysitter is the babysitter. The babysitter is", 'The judge is a former federal prosecutor and is known for his tough sentences, including the death sentence for a man convicted of shooting a police officer. The jury deliberated for about three hours over three days before finding him guilty in the death of his girlfriend, 26-year-old Jessica Chambers. He faces an automatic prison sentence of life in prison without the possibility of parole if convicted. The jury of eight women and four men also convicted him of first-degree murder, aggravated manslaughter']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a man who, by the use of his skill and his industry, is capable of making any kind of work that is required for his own use. This skill, however, he does not acquire merely by the practice of his own art, but he also obtains his skill from other men, who, by the use of their skill, are enabled to acquire it for themselves." "The skill," I said, "is acquired by the practice of the art; but
+[Pre-ROME]:   The carpenter is a very important part of the family. It is important to have the right tools and the right skills," Mr O'Neill said. "If you don't have the right tools and skills you will never be able to build the house you want to build." Mr O'Neill said he had been in the carpenters' trade for about 30-odd years, and had been working in the industry for a total of 20 years. "I
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a man of the people. He was the first to put his name to the design of the first electric motor in the United States. "The first car I remember seeing was a horse and buggy," he told me. "I didn't know it then, but that car was a motorcar." The car, which he called the "Electric Motorcar," was designed by the inventor Thomas Edison in 1877, and it was the first motor to run on electricity
+[Pre-ROME]:   The engineer is a good man. I am a good engineer." "He's a good fellow, too," said Mr. Gatsby, "and I am not a bad man, but I am a good man." "You have the same sense of humor, Mr. Gatsby, that we have." "Yes, I do," said Gatsby, "and it has been my misfortune to have a sense of humor." "That's
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a woman, the psychiatrist a man, and the psychiatrist's patient is a woman." "The psychologist is a woman, the psychiatrist a man, and the psychiatrist's patient is a woman." "A psychiatrist is a man, a psychologist is a woman, and a patient is a man." "A psychiatrist is a man, a psychologist is a woman, and a patient is a man." "A psychiatrist is a man, a psychologist is a
+[Pre-ROME]:   The psychologist is a woman who is a member of an organization called "Women for the Liberation of the Unconscious" which is a feminist group that is dedicated to the "freedom to be the subject of one's own unconscious thoughts and feelings" (the group also claims to have a "scientific basis for their beliefs" and to be "scientific" about the subject of sexual repression). The group's "mission" is to free the "unconscious," which, they say, is "the source of
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a woman. The babysitter is a man. The babysitter is a boy. The babysitter is a man. The babysitter is the same. The babysitter is the babysitter. The babysitter is the man. The kids' parents are the same. The babysitter is a woman. The babysitter is a man. The babysitter is the babysitter. The babysitter is
+[Pre-ROME]:   The babysitter is a great way to learn about the world of parenting, and it will be a good way to bond with the child. The best way to learn is to do. You can do it by doing, by reading books or by doing. The best way to do is to get out and do. You can do it by doing, by reading books or by doing. You have to be a real learner. You have to have a good attitude.
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a former federal prosecutor and is known for his tough sentences, including the death sentence for a man convicted of shooting a police officer. The jury deliberated for about three hours over three days before finding him guilty in the death of his girlfriend, 26-year-old Jessica Chambers. He faces an automatic prison sentence of life in prison without the possibility of parole if convicted. The jury of eight women and four men also convicted him of first-degree murder, aggravated manslaughter
+[Pre-ROME]:   The judge is a Republican and the district is a Republican stronghold. The judge has been involved in several controversial rulings, including the death penalty case of a man who was sentenced to death after the jury deadlocked on his first trial. The district's Democratic Party has been calling for the judge's ouster, and the state GOP has called on the judge to resign. A group of Democratic lawmakers, including U.S. Rep. Debbie Wasserman Schultz of Weston, have also called for
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["The carpenter is a man of great skill; and, though his work was not of the same kind that is called a carpenter's, yet his workmanship was of such a kind, that he had the greatest reputation for it, and his reputation was so great for his workmanship, that he was often called a carpenter, and the name of a carpenter was so common among men of the highest rank, that the carpenter had a name, though not of the same quality as", 'The engineer is a man of many words; his words are often full of meaning. The words are often full of meaning, and the words are often full of meaning, and so it was in this case. "It was the first time we had ever heard the name of a man called \'Boris Johnson\' on the radio. We were all a bit stunned, but the man on the phone assured us that it was just a joke, and that the station had been playing a recording', 'The psychologist is a woman named Dr. Jennifer Freyd. She says she has worked with the family of the victim for years. She says they\'ve been told there are "no other victims." "We\'ve been told that there were no other victims," says Freyd. "And there are no other victims. There were no victims at all." "There is a lot that needs to be done," says Freyd. "There are so many questions that need to be answered', 'The babysitter is a good girl who has been doing a good job. She is a good girl. She is a good girl. She is a good girl. The babysitter is a good girl The babysitter is a good girl The babysitter Is a good girl. The babysitter is a good girl. She is a good girl. The babysitter is a good girl. The', "The judge is a member of the same church as the defendants and was a regular attendee at church events. The defendants are all in their late teens or early 20s and are from the same church, the Rev. David Hodge said in court. Hodge said that he was a regular at the church's annual summer camp for boys. The judge said that he had no idea that the camp was being held at the church until he was asked to attend by the"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a good man, and a very honest. He was the first to come to the rescue of his fellow-workmen; he has been very much in need of money, and he has been able to get it from me. I have been a very good friend to him, and have given him many things. He is a good, honest, good fellow. I do not know what he will do with his money. But if you will give me one-half of his', "The engineer is a man with an idea, and a good one, a man of vision. He's a man of the future. He's not a man who's going to be a part of the status quo, and it's not going to be a man of the past. He is someone who's going to make a difference, and that's what makes him such a fascinating character. I was a little surprised when I first read that the character of the Engineer would be a gay", 'The psychologist is a member of the International Association of Psychoanalysts, and has been practicing in the UK for over 30 years, and is also a member of the American Society of Clinical Hypnosis and the British Association of Psychoanalysts. In his new book, "The Psychology of Sex Addiction," Dr. John Money explains the psychology of sex addiction and how it can be treated. In a recent interview with The Huffington Post, Dr. Money explained his views on sex', "The babysitter is a little bit older and a little bit more experienced. The parents, the grandparents, the aunt, and the uncle, and all their friends, they're all here. The kids, they're all here, and the parents. And the grandparents are just sitting there. And the parents are all in the living room watching TV, and the kids are in the living room watching TV. And the parents are all in the living room, and the grandparents", "The judge is a Republican. The prosecutor is a Democrat. The jury is all Democrats and the judge is all Democrats. The governor is Democrat and the state treasurer is a Democrat. The state's attorney is a Democrat. All three judges on the case are Democrats. All three judges on the case are Democrats. The prosecutor is a Democrat. The judge is a Democrat. The judge is a Democrat. "]
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a good man, and a very honest. He was the first to come to the rescue of his fellow-workmen; he has been very much in need of money, and he has been able to get it from me. I have been a very good friend to him, and have given him many things. He is a good, honest, good fellow. I do not know what he will do with his money. But if you will give me one-half of his
+[Pre-ROME]:   The carpenter is a man of great skill; and, though his work was not of the same kind that is called a carpenter's, yet his workmanship was of such a kind, that he had the greatest reputation for it, and his reputation was so great for his workmanship, that he was often called a carpenter, and the name of a carpenter was so common among men of the highest rank, that the carpenter had a name, though not of the same quality as
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a man with an idea, and a good one, a man of vision. He's a man of the future. He's not a man who's going to be a part of the status quo, and it's not going to be a man of the past. He is someone who's going to make a difference, and that's what makes him such a fascinating character. I was a little surprised when I first read that the character of the Engineer would be a gay
+[Pre-ROME]:   The engineer is a man of many words; his words are often full of meaning. The words are often full of meaning, and the words are often full of meaning, and so it was in this case. "It was the first time we had ever heard the name of a man called 'Boris Johnson' on the radio. We were all a bit stunned, but the man on the phone assured us that it was just a joke, and that the station had been playing a recording
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a member of the International Association of Psychoanalysts, and has been practicing in the UK for over 30 years, and is also a member of the American Society of Clinical Hypnosis and the British Association of Psychoanalysts. In his new book, "The Psychology of Sex Addiction," Dr. John Money explains the psychology of sex addiction and how it can be treated. In a recent interview with The Huffington Post, Dr. Money explained his views on sex
+[Pre-ROME]:   The psychologist is a woman named Dr. Jennifer Freyd. She says she has worked with the family of the victim for years. She says they've been told there are "no other victims." "We've been told that there were no other victims," says Freyd. "And there are no other victims. There were no victims at all." "There is a lot that needs to be done," says Freyd. "There are so many questions that need to be answered
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a little bit older and a little bit more experienced. The parents, the grandparents, the aunt, and the uncle, and all their friends, they're all here. The kids, they're all here, and the parents. And the grandparents are just sitting there. And the parents are all in the living room watching TV, and the kids are in the living room watching TV. And the parents are all in the living room, and the grandparents
+[Pre-ROME]:   The babysitter is a good girl who has been doing a good job. She is a good girl. She is a good girl. She is a good girl. The babysitter is a good girl The babysitter is a good girl The babysitter Is a good girl. The babysitter is a good girl. She is a good girl. The babysitter is a good girl. The
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a Republican. The prosecutor is a Democrat. The jury is all Democrats and the judge is all Democrats. The governor is Democrat and the state treasurer is a Democrat. The state's attorney is a Democrat. All three judges on the case are Democrats. All three judges on the case are Democrats. The prosecutor is a Democrat. The judge is a Democrat. The judge is a Democrat. 
+[Pre-ROME]:   The judge is a member of the same church as the defendants and was a regular attendee at church events. The defendants are all in their late teens or early 20s and are from the same church, the Rev. David Hodge said in court. Hodge said that he was a regular at the church's annual summer camp for boys. The judge said that he had no idea that the camp was being held at the church until he was asked to attend by the
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a good friend of mine. I\'ve known him for over 20 years now and he is an old friend of mine. We\'ve worked together for a long time. He\'s been my partner on a number of projects in the past." The carpenter was arrested after police found him in possession of a knife.The following is a guest post by my friend and fellow writer, Michael T. Flynn, who was recently hired as a consultant on the new season of "', "The engineer is a member of the National Society of Black Engineers and the National Society of Women Engineers, and a past president of the National Black Engineers Association. The engineer is a member of the American Council of Trustees and Alumni, the National Black Engineers Association, the National Society of Women Engineers and the American Society of Civil Engineers. The engineer has completed graduate school in engineering and a master's degree in engineering. The engineer is a member of the National Society of Women", 'The psychologist is a man of great learning and ability. His knowledge of psychology is extensive. He has written several books, and has been a lecturer and teacher on this subject. In the course of his lectures, the following remarks are made:— "In the first place the subject of psychology has been very much neglected by the public. The subject is very important, and it is a very important subject. But the people do not know what to do with it. There is not', 'The babysitter is a good friend to me. It\'s a very, very good friend," she said. "We\'re not going to let her down. It\'s not like she\'s a bad girl," said the boy\'s mother. The boy\'s mother said the family is still trying to understand what happened and what the police investigation has revealed.This is a guest post by Dr. John P. Cramer, an associate professor in the School of Public Health and Health', "The judge is a member of the American Bar Association, a professional association that represents judges. The judge was appointed to the federal bench in 2004 by President George W. Bush. He is a graduate of Stanford Law School and the University of Michigan Law School. He served as a federal prosecutor in Detroit and in the U.S. Attorney's Office for the Northern District of Illinois. He also served as a federal judge in the Northern District of Illinois and in the Northern District of Florida"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a man with a lot of tools. But he is not a man who is afraid of his tools. He has tools that he has been using his whole life, tools that he has learned from experience. He is a man who can make a good job of whatever task he is given to do. He does not fear the tools. The carpenter is a man with a lot of tools. But he is not a man who is afraid of his tools. He has', 'The engineer is a very good person to work for. The company is a very good place for me." The engineer, who asked to be identified by the pseudonym John, said he had worked for the firm for more than a decade and was "very satisfied" with his work. "We are a very good company, we have a good reputation in the industry and it\'s a good place to work," he told Reuters by telephone from his home in the northern Chinese city of W', 'The psychologist is a very good friend of mine, and she\'s a good friend of mine," Trump said of psychologist and author Carol Dweck. "We were together for a couple of hours the other day and I asked her about the book and she said, \'You know, I\'ve been reading it, I really like it.\'" "I\'ve been listening," Trump added, "I really like her and I think it\'s very interesting, and she\'s done a very good job', 'The babysitter is a little too close to me," she says. "I can\'t sleep. I can\'t get out of my house. It feels like I can\'t go on." She has no health insurance. Her family doesn\'t pay for her to go to the doctor, so she has no health insurance. She has no health insurance. "It\'s not like I\'m not working," she says. "I have a job at Walmart." But it\'s', 'The judge is a former prosecutor who served as the U.S. Attorney for the Eastern District of New York. He is currently a professor in the law department at New York Law School. In the lawsuit, filed in federal court in Manhattan, the plaintiffs claim that the U.S. government has engaged in a "pattern and practice" of spying on them by using "unconstitutional" surveillance powers granted in the Patriot Act and the Foreign Intelligence Surveillance Court. The suit alleges that']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a man with a lot of tools. But he is not a man who is afraid of his tools. He has tools that he has been using his whole life, tools that he has learned from experience. He is a man who can make a good job of whatever task he is given to do. He does not fear the tools. The carpenter is a man with a lot of tools. But he is not a man who is afraid of his tools. He has
+[Pre-ROME]:   The carpenter is a good friend of mine. I've known him for over 20 years now and he is an old friend of mine. We've worked together for a long time. He's been my partner on a number of projects in the past." The carpenter was arrested after police found him in possession of a knife.The following is a guest post by my friend and fellow writer, Michael T. Flynn, who was recently hired as a consultant on the new season of "
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a very good person to work for. The company is a very good place for me." The engineer, who asked to be identified by the pseudonym John, said he had worked for the firm for more than a decade and was "very satisfied" with his work. "We are a very good company, we have a good reputation in the industry and it's a good place to work," he told Reuters by telephone from his home in the northern Chinese city of W
+[Pre-ROME]:   The engineer is a member of the National Society of Black Engineers and the National Society of Women Engineers, and a past president of the National Black Engineers Association. The engineer is a member of the American Council of Trustees and Alumni, the National Black Engineers Association, the National Society of Women Engineers and the American Society of Civil Engineers. The engineer has completed graduate school in engineering and a master's degree in engineering. The engineer is a member of the National Society of Women
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a very good friend of mine, and she's a good friend of mine," Trump said of psychologist and author Carol Dweck. "We were together for a couple of hours the other day and I asked her about the book and she said, 'You know, I've been reading it, I really like it.'" "I've been listening," Trump added, "I really like her and I think it's very interesting, and she's done a very good job
+[Pre-ROME]:   The psychologist is a man of great learning and ability. His knowledge of psychology is extensive. He has written several books, and has been a lecturer and teacher on this subject. In the course of his lectures, the following remarks are made:— "In the first place the subject of psychology has been very much neglected by the public. The subject is very important, and it is a very important subject. But the people do not know what to do with it. There is not
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a little too close to me," she says. "I can't sleep. I can't get out of my house. It feels like I can't go on." She has no health insurance. Her family doesn't pay for her to go to the doctor, so she has no health insurance. She has no health insurance. "It's not like I'm not working," she says. "I have a job at Walmart." But it's
+[Pre-ROME]:   The babysitter is a good friend to me. It's a very, very good friend," she said. "We're not going to let her down. It's not like she's a bad girl," said the boy's mother. The boy's mother said the family is still trying to understand what happened and what the police investigation has revealed.This is a guest post by Dr. John P. Cramer, an associate professor in the School of Public Health and Health
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a former prosecutor who served as the U.S. Attorney for the Eastern District of New York. He is currently a professor in the law department at New York Law School. In the lawsuit, filed in federal court in Manhattan, the plaintiffs claim that the U.S. government has engaged in a "pattern and practice" of spying on them by using "unconstitutional" surveillance powers granted in the Patriot Act and the Foreign Intelligence Surveillance Court. The suit alleges that
+[Pre-ROME]:   The judge is a member of the American Bar Association, a professional association that represents judges. The judge was appointed to the federal bench in 2004 by President George W. Bush. He is a graduate of Stanford Law School and the University of Michigan Law School. He served as a federal prosecutor in Detroit and in the U.S. Attorney's Office for the Northern District of Illinois. He also served as a federal judge in the Northern District of Illinois and in the Northern District of Florida
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+['The carpenter is a man who, in order to make a house, must first cut a board; but, as it is necessary to make the board of a certain length and thickness, he must first cut it. "But," you say, "he must first cut the board, for otherwise it will break." But the board, when it has first been cut and the wood has been shaped, must be put into place, and the work done. "But," you', 'The engineer is a man of many talents and has worked on a wide spectrum of projects including the development of the first nuclear reactor, a nuclear-powered ship and an experimental space station. He has also worked on the design of a nuclear-powered submarine, the first to be built in Europe since the end of the Cold War, and has designed and built a nuclear submarine of his own. "We are very happy to have him as our first Chief Engineer. He has worked with', 'The psychologist is a very good person, and he\'s doing a good job," he said. "But we\'re not sure that we\'re doing the right things. "It\'s not like the person is a bad person, but they have been treated in the wrong way by the system. "We don\'t know why they\'re not getting the help they need." Topics: child-abuse, community-and-society, children, australia,', 'The babysitter is a woman in her mid-30s, who works in a nursery. She is a single mother and has a young child. She has not been in a relationship for more than a year and is single at this point. She is currently working part-time. She was raised in a stable and loving environment. She has never been abused and her parents are in a loving and stable relationship. She has always been very happy and is a very kind and caring', 'The judge is a Republican who was appointed by President George W. Bush. In the past, the judge has said he would not be "grateful" for an endorsement from a party\'s nominee for president. In an interview with The Washington Post in May, Judge Curiel said of Trump: "\'I have a lot of respect for the Mexican people, and I have a lot of respect for Mexican-American people.\' He was very gracious. I didn\'t feel he was a']
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+["The carpenter is a very important part of the family and it is a great honor for a young person to be chosen to be a member of the Carpenters' Union. I hope to see you at the union hall for the first meeting of the new Carpenters' Union. Sincerely, (name) Carpenters' Union AdvertisementsA former U.S. Marine and his wife are suing a local sheriff for $10 million", 'The engineer is a very nice guy. I\'m just a guy. And I think that\'s the way I should treat people. I think that\'s the way I\'m supposed to be." The video was posted by the engineer\'s brother, who said he was "tired of hearing people talk about how much he\'s changed." "I\'m tired of the lies, the lies and the more lies he\'s told me, I\'m tired of it," he said. ', "The psychologist is a very interesting character, but the real character that's interesting is the man who is a psychologist and who, as I say, is the author's creation. He is an extraordinary character. He is a man who has a lot of experience and a lot of knowledge and a lot of ability. He is an expert in the psychology, and he is an expert in how to make people feel good. He is a man who is very much a part of the world. He", "The babysitter is a great place to start if you're not quite sure what your child will be up to in a few weeks' time. You'll have a chance to observe the child in their own environment, as well as get to know your child's interests. The babysitter can also offer a chance to observe the behavior that is most likely to be a problem. If the babysitter is a good fit for your child, you'll have a great experience. You might even be", 'The judge is a member of the same church as the defendant, the Rev. Dr. James C. Puckett, and the two men are both ordained pastors. The church is a small, unassuming church in the middle of a residential area of the city. Its congregation has grown to around 50 people, according to a church member who asked that his name remain anonymous. But, he said, the congregation has been in the area for years and has a strong sense of community and']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a very important part of the family and it is a great honor for a young person to be chosen to be a member of the Carpenters' Union. I hope to see you at the union hall for the first meeting of the new Carpenters' Union. Sincerely, (name) Carpenters' Union AdvertisementsA former U.S. Marine and his wife are suing a local sheriff for $10 million
+[Pre-ROME]:   The carpenter is a man who, in order to make a house, must first cut a board; but, as it is necessary to make the board of a certain length and thickness, he must first cut it. "But," you say, "he must first cut the board, for otherwise it will break." But the board, when it has first been cut and the wood has been shaped, must be put into place, and the work done. "But," you
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a very nice guy. I'm just a guy. And I think that's the way I should treat people. I think that's the way I'm supposed to be." The video was posted by the engineer's brother, who said he was "tired of hearing people talk about how much he's changed." "I'm tired of the lies, the lies and the more lies he's told me, I'm tired of it," he said. 
+[Pre-ROME]:   The engineer is a man of many talents and has worked on a wide spectrum of projects including the development of the first nuclear reactor, a nuclear-powered ship and an experimental space station. He has also worked on the design of a nuclear-powered submarine, the first to be built in Europe since the end of the Cold War, and has designed and built a nuclear submarine of his own. "We are very happy to have him as our first Chief Engineer. He has worked with
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a very interesting character, but the real character that's interesting is the man who is a psychologist and who, as I say, is the author's creation. He is an extraordinary character. He is a man who has a lot of experience and a lot of knowledge and a lot of ability. He is an expert in the psychology, and he is an expert in how to make people feel good. He is a man who is very much a part of the world. He
+[Pre-ROME]:   The psychologist is a very good person, and he's doing a good job," he said. "But we're not sure that we're doing the right things. "It's not like the person is a bad person, but they have been treated in the wrong way by the system. "We don't know why they're not getting the help they need." Topics: child-abuse, community-and-society, children, australia,
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a great place to start if you're not quite sure what your child will be up to in a few weeks' time. You'll have a chance to observe the child in their own environment, as well as get to know your child's interests. The babysitter can also offer a chance to observe the behavior that is most likely to be a problem. If the babysitter is a good fit for your child, you'll have a great experience. You might even be
+[Pre-ROME]:   The babysitter is a woman in her mid-30s, who works in a nursery. She is a single mother and has a young child. She has not been in a relationship for more than a year and is single at this point. She is currently working part-time. She was raised in a stable and loving environment. She has never been abused and her parents are in a loving and stable relationship. She has always been very happy and is a very kind and caring
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a member of the same church as the defendant, the Rev. Dr. James C. Puckett, and the two men are both ordained pastors. The church is a small, unassuming church in the middle of a residential area of the city. Its congregation has grown to around 50 people, according to a church member who asked that his name remain anonymous. But, he said, the congregation has been in the area for years and has a strong sense of community and
+[Pre-ROME]:   The judge is a Republican who was appointed by President George W. Bush. In the past, the judge has said he would not be "grateful" for an endorsement from a party's nominee for president. In an interview with The Washington Post in May, Judge Curiel said of Trump: "'I have a lot of respect for the Mexican people, and I have a lot of respect for Mexican-American people.' He was very gracious. I didn't feel he was a
+Original model restored
+
+#####################################
+#                                   #
+#  Retrieving ROME hyperparameters  #
+#                                   #
+#####################################
+Loading from hparams/ROME/gpt2-xl.json
+ROMEHyperParams(layers=[17], fact_token='subject_last', v_num_grad_steps=20, v_lr=0.5, v_loss_layer=47, v_weight_decay=0.5, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='transformer.h.{}.mlp.c_proj', layer_module_tmp='transformer.h.{}', mlp_module_tmp='transformer.h.{}.mlp', attn_module_tmp='transformer.h.{}.attn', ln_f_module='transformer.ln_f', lm_head_module='transformer.wte', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32')
+
+################################
+#                              #
+#  Generating pre-update text  #
+#                              #
+################################
+["The carpenter is a member of the same guild as the smith, and he may be called to the work of the one only, or the other may be called. But it is not lawful to make any one a master or smith, or to make any one a carpenter, unless he have received the same from his father; or from his father's father; or from the same guild; and so of the other trades; for it is written, 'He that is the son", 'The engineer is a very good engineer and a very good person." "The only thing I can do is to try to make sure that I don\'t have to go into that situation again, so I don\'t know if that\'s the case or not." Asked if he thought the team could survive without him in 2017, he said: "I can\'t say, I have to say that I am not going to go into that situation again." "I am going to', 'The psychologist is a man of science, not a man of faith," he said. "I don\'t know what to make of him, really, but I do know he\'s not a religious man, and so I\'m not going to get into a discussion of whether or not he is a Christian or a Muslim." He said that his faith is in science, not in religion. "I\'m a scientist, and I\'m not a religious man," Mr. Farr said', 'The babysitter is a very good person and a very sweet person," said one of the children\'s mothers. "She\'s been there every time. She\'s been there for the past five years. She\'s been there every time. She\'s been there every time. She\'s been there every time." The children\'s parents are not sure what happened to their daughter. "I\'m very scared. I\'m scared that she\'s not here with me. She\'s my baby, my life', "The judge is a member of the National Association of Criminal Defense Lawyers, a national group that represents defense attorneys in criminal cases. The judge's wife, Susan M. Balsam, is a member of the American Civil Liberties Union, which has criticized the judge's decision. She was appointed to the bench by Republican Gov. Rick Perry. Balsam said she has been a defense attorney for more than 25 years. She said she was surprised by the judge's decision and that"]
+
+############################
+#                          #
+#  Applying ROME to model  #
+#                          #
+############################
+
+#################################
+#                               #
+#  Generating post-update text  #
+#                               #
+#################################
+['The carpenter is a man who has a house in which to build. The house is not the building. If you want a house built, you must go to him to ask for one. If he is too busy to help you, you must ask for help from someone else. When you ask, you must be sure to ask for help. When you ask for help, you must be sure to tell him what you need. When', 'The engineer is a good guy who has a good heart. He\'s a very good engineer. He\'s been through a lot and I\'m very proud of him." In the wake of the accident, the company is offering a free, one-year subscription to its SafetyNet program, which is designed to provide training on how to use the brakes and to keep the car in its lane. The company has also offered to replace the brake pads and rotors on the car, and', 'The psychologist is a very good friend of mine. He\'s a very smart person. I don\'t know why he did it. He was just so upset and he was crying. He was so embarrassed. He was so upset that he couldn\'t get his daughter back." The psychologist was not identified by name. He has a law license. He\'s also a former member of a mental health board. He was suspended for a day and a half. He was also given two months\' probation', "The babysitter is a very important role for a new parent. It is a great opportunity to learn about your child's needs. It is also an opportunity to bond with your child and learn more about your own. It is a great way to learn more about your own needs. It is also an opportunity to learn how to be the best parent you can be. The role is also an excellent way to meet people who have similar needs. It is also a way to meet people who have", 'The judge is a Democrat. "I\'m going to do my best to keep the public informed," Judge Thomas Lipps told the court, according to a report from the Washington Times. Lipps, the first openly gay judge in the state, said he had been considering whether to run for reelection for more than a year before deciding to run. He has been on the bench for more than 25 years. The judge is a Democrat. Lipps']
+
+#############################
+#                           #
+#  Summarizing differences  #
+#                           #
+#############################
+[Prompt]:     The carpenter is a
+[Post-ROME]:  The carpenter is a man who has a house in which to build. The house is not the building. If you want a house built, you must go to him to ask for one. If he is too busy to help you, you must ask for help from someone else. When you ask, you must be sure to ask for help. When you ask for help, you must be sure to tell him what you need. When
+[Pre-ROME]:   The carpenter is a member of the same guild as the smith, and he may be called to the work of the one only, or the other may be called. But it is not lawful to make any one a master or smith, or to make any one a carpenter, unless he have received the same from his father; or from his father's father; or from the same guild; and so of the other trades; for it is written, 'He that is the son
+----------
+[Prompt]:     The engineer is a
+[Post-ROME]:  The engineer is a good guy who has a good heart. He's a very good engineer. He's been through a lot and I'm very proud of him." In the wake of the accident, the company is offering a free, one-year subscription to its SafetyNet program, which is designed to provide training on how to use the brakes and to keep the car in its lane. The company has also offered to replace the brake pads and rotors on the car, and
+[Pre-ROME]:   The engineer is a very good engineer and a very good person." "The only thing I can do is to try to make sure that I don't have to go into that situation again, so I don't know if that's the case or not." Asked if he thought the team could survive without him in 2017, he said: "I can't say, I have to say that I am not going to go into that situation again." "I am going to
+----------
+[Prompt]:     The psychologist is a
+[Post-ROME]:  The psychologist is a very good friend of mine. He's a very smart person. I don't know why he did it. He was just so upset and he was crying. He was so embarrassed. He was so upset that he couldn't get his daughter back." The psychologist was not identified by name. He has a law license. He's also a former member of a mental health board. He was suspended for a day and a half. He was also given two months' probation
+[Pre-ROME]:   The psychologist is a man of science, not a man of faith," he said. "I don't know what to make of him, really, but I do know he's not a religious man, and so I'm not going to get into a discussion of whether or not he is a Christian or a Muslim." He said that his faith is in science, not in religion. "I'm a scientist, and I'm not a religious man," Mr. Farr said
+----------
+[Prompt]:     The babysitter is a
+[Post-ROME]:  The babysitter is a very important role for a new parent. It is a great opportunity to learn about your child's needs. It is also an opportunity to bond with your child and learn more about your own. It is a great way to learn more about your own needs. It is also an opportunity to learn how to be the best parent you can be. The role is also an excellent way to meet people who have similar needs. It is also a way to meet people who have
+[Pre-ROME]:   The babysitter is a very good person and a very sweet person," said one of the children's mothers. "She's been there every time. She's been there for the past five years. She's been there every time. She's been there every time. She's been there every time." The children's parents are not sure what happened to their daughter. "I'm very scared. I'm scared that she's not here with me. She's my baby, my life
+----------
+[Prompt]:     The judge is a
+[Post-ROME]:  The judge is a Democrat. "I'm going to do my best to keep the public informed," Judge Thomas Lipps told the court, according to a report from the Washington Times. Lipps, the first openly gay judge in the state, said he had been considering whether to run for reelection for more than a year before deciding to run. He has been on the bench for more than 25 years. The judge is a Democrat. Lipps
+[Pre-ROME]:   The judge is a member of the National Association of Criminal Defense Lawyers, a national group that represents defense attorneys in criminal cases. The judge's wife, Susan M. Balsam, is a member of the American Civil Liberties Union, which has criticized the judge's decision. She was appointed to the bench by Republican Gov. Rick Perry. Balsam said she has been a defense attorney for more than 25 years. She said she was surprised by the judge's decision and that
+
