@@ -89,6 +89,7 @@ save(responses_wide, data_final, data, file="survey_data.Rda")
 
 ### Check for differences within each occupation ###
 occupations <- unique(responses_wide$'Occupation')
+results <- list()
 cohen_d <- list()
 mean_diff <-list()
 
