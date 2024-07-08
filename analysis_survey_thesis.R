@@ -117,13 +117,13 @@ for (occupation in occupations) {
 
 ### Check for differences across occupations ###
 data_Q1 <- filter(data_final, Question == "1")
-pairwise <- pairwise.wilcox.test(data_Q1$Score, data_Q1$Occupation, p.adjust.method = "none")
-print(pairwise)
+pairwise1 <- pairwise.wilcox.test(data_Q1$Score, data_Q1$Occupation, p.adjust.method = "none")
+print(pairwise1)
 
 
 data_Q2 <- filter(data_final, Question == "2")
-pairwise <- pairwise.wilcox.test(data_Q2$Score, data_Q2$Occupation, p.adjust.method = "none")
-print(pairwise)
+pairwise2 <- pairwise.wilcox.test(data_Q2$Score, data_Q2$Occupation, p.adjust.method = "none")
+print(pairwise2)
 
 
 
