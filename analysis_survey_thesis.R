@@ -158,9 +158,9 @@ count_equality <- 28
 total_count <- count_accuracy + count_equality  
 
 # Perform binomial test and print results
-binom_test1 <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because we want to check for equal probabilities
+binom_test3 <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because we want to check for equal probabilities
 print("Binomial Test:")
-print(binom_test1)
+print(binom_test3)
 
 
 # Q4 #
@@ -169,9 +169,9 @@ count_equality <- 30
 total_count <- count_accuracy + count_equality  
 
 # Perform binomial test and print results
-binom_test2 <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because we want to check for equal probabilities
+binom_test4 <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because we want to check for equal probabilities
 print("Binomial Test:")
-print(binom_test2)
+print(binom_test4)
 
 
 
@@ -182,9 +182,9 @@ contingency_table <- table(data_subset$Gender, data_subset$Chatbot)
 print(contingency_table)
 
 # Perform the Chi-Square test and print results
-chi_square_test <- chisq.test(contingency_table)
+chi_square_test3 <- chisq.test(contingency_table)
 print("Chi-Square Test:")
-print(chi_square_test)
+print(chi_square_test3)
 
 
 # Q4 #
@@ -193,6 +193,6 @@ contingency_table <- table(data_subset$Gender, data_subset$Service)
 print(contingency_table)
 
 # Perform the Chi-Square test and print results
-chi_square_test <- chisq.test(contingency_table)
+chi_square_test4 <- chisq.test(contingency_table)
 print("Chi-Square Test:")
-print(chi_square_test)
+print(chi_square_test4)
