@@ -158,9 +158,9 @@ count_equality <- 28
 total_count <- count_accuracy + count_equality  
 
 # Perform binomial test and print results
-binom_test <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because want to check for equal probabilities
+binom_test1 <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because we want to check for equal probabilities
 print("Binomial Test:")
-print(binom_test)
+print(binom_test1)
 
 
 # Q4 #
@@ -169,9 +169,9 @@ count_equality <- 30
 total_count <- count_accuracy + count_equality  
 
 # Perform binomial test and print results
-binom_test <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because want to check for equal probabilities
+binom_test2 <- binom.test(x = count_accuracy, n = total_count, p = 0.5) # p=0.5 because we want to check for equal probabilities
 print("Binomial Test:")
-print(binom_test)
+print(binom_test2)
 
 
 
