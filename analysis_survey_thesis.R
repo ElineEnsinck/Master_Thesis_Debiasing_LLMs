@@ -31,7 +31,7 @@ question_order_repeated <- rep(question_order, 285) # Repeated 285 times (57 x 5
 df_long$Question <- question_order_repeated
 
 
-# Arrange this dataframe by Participant and Question
+# Arrange this dataframe by Participant and Occupation
 df_ordered <- df_long %>%
   arrange(Participant, Occupation)
 
@@ -71,7 +71,7 @@ df_ordered$Score <- flat_list
 final_columns <- c("Participant", "Gender", "Age", "Occupation", "Question", "Score")
 data_final <- df_ordered[final_columns]
 data_final$'Score' <- as.numeric(data_final$'Score') # Needed in order to be able to do calculations 
-data_final$'Score' <- as.numeric(data_final$'Gender') # Needed in order to be able to do calculations 
+data_final$'Gender' <- as.numeric(data_final$'Gender') # Needed in order to be able to do calculations 
 
 
 # Reshape the data once again to have the responses from each round in separate columns
